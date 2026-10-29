@@ -112,8 +112,9 @@
   .industries h2{color:#fff}
   .ind-top .lead{margin:16px auto 0;color:#dfe8ee}
   .ind-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin-top:44px}
-  .ind{flex:0 0 calc((100% - 44px)/3);background:#fff;border-radius:12px;padding:28px 26px;box-shadow:0 14px 34px rgba(0,0,0,.18)}
-  .ind h3{font-size:19px;margin:16px 0 12px}
+  .ind{flex:0 0 calc((100% - 44px)/3);background:#fff;border-radius:12px;padding:28px 26px;box-shadow:0 14px 34px rgba(0,0,0,.18);display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;align-content:start}
+  .ind h3{font-size:19px;margin:0}
+  .ind .ind-list{grid-column:1/-1;margin-top:22px}
   .ind-note{text-align:center;margin-top:36px;color:#dfe8ee;font-size:16px}
   .ind-list{list-style:none;margin-top:14px}
   .ind-list li{position:relative;padding-left:28px;font-size:15.5px;color:var(--muted);margin-top:10px;line-height:1.45}
