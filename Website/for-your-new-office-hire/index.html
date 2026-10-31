@@ -83,6 +83,11 @@
   .nav-links{display:flex;align-items:center;gap:26px;margin-left:auto;margin-right:28px}
   .nav-links a{color:#cfd8df;font-size:14.5px;font-weight:600;transition:color .15s}
   .nav-links a:hover{color:#fff}
+  .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;margin-left:auto;margin-right:10px;color:#fff}
+  .nav-toggle svg{width:26px;height:26px;display:block}
+  .nav-toggle .ic-close{display:none}
+  header.open .nav-toggle .ic-menu{display:none}
+  header.open .nav-toggle .ic-close{display:block}
   section[id],.player[id]{scroll-margin-top:72px}
 
   /* HERO */
@@ -187,7 +192,11 @@
     h1 br,h2 br{display:none}
     .wrap{padding:0 16px}
     .nav .btn{padding:10px 16px;font-size:13px}
-    .nav-links{display:none}
+    .nav-toggle{display:block}
+    .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:#111;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:8px 0 12px;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 14px 30px rgba(0,0,0,.35)}
+    .nav-links a{padding:13px 16px;font-size:16px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav-links a:last-child{border-bottom:0}
+    header.open .nav-links{display:flex}
     .hero{padding:48px 0 64px}
     section.band{padding:64px 0}
     .stage .n{font-size:48px} .time .n{font-size:64px}
@@ -199,15 +208,18 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="/"><img src="logo.png" alt=""><span class="brand-text">Dark Horse AI<span>.</span></span></a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="nav-links">
       <a href="#demo">Demo</a>
       <a href="#results">Results</a>
       <a href="#features">What It Does</a>
-      <a href="#bank">Bank Rec</a>
       <a href="#health">Health Check</a>
       <a href="#how">How It Works</a>
       <a href="#know">Worth Knowing</a>
     </nav>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
     <a class="btn" href="#contact">Organise a Quick Chat</a>
   </div>
 </header>
@@ -540,6 +552,16 @@
     a.href = 'mailto:' + addr + (s ? '?subject=' + encodeURIComponent(s) : '');
     if (a.classList.contains('js-mail-text')) { a.textContent = addr; }
   });
+})();
+</script>
+<script>
+(function(){
+  var h=document.querySelector('header'),t=document.querySelector('.nav-toggle');
+  if(!h||!t)return;
+  function set(o){h.classList.toggle('open',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  t.addEventListener('click',function(){set(!h.classList.contains('open'));});
+  document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+  document.addEventListener('click',function(e){if(h.classList.contains('open')&&!h.contains(e.target))set(false);});
 })();
 </script>
 <script>document.querySelectorAll(".year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
