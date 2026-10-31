@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0FMP66S5C9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0FMP66S5C9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make Bookkeeping a Smaller Part of the Admin Role | Dark Horse AI</title>
+<meta name="description" content="An AI agent that works with Xero to take much of the repetitive work out of processing supplier invoices and bank transactions. Your staff stay in control of the decisions. Northern NSW.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../favicon.ico?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#122b45;
+    --navy-deep:#0d2338;
+    --text:#2c3e50;
+    --muted:#4f6071;
+    --teal:#1f6f5f;
+    --mint:#eef5f1;
+    --icon-bg:#dcebe4;
+    --grey:#f4f6f7;
+    --yellow:#f3c24f;
+    --yellow-hover:#e9b63d;
+    --line:#e5eae8;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 36px}
+  .narrow{max-width:800px;margin:0 auto}
+
+  h1,h2,h3,h4{color:var(--navy);line-height:1.15;letter-spacing:-.02em}
+  h1{font-size:44px;font-weight:800;letter-spacing:-.03em}
+  h2{font-size:34px;font-weight:800}
+  h3{font-size:21px;font-weight:700}
+  p{font-size:17px}
+  .prose p{margin-top:16px;color:var(--text)}
+  .prose p:first-child{margin-top:0}
+  .prose p.lead{color:var(--muted);font-size:18px}
+  .prose ul{margin:14px 0 0 0;list-style:none}
+  .prose li{position:relative;padding-left:30px;margin-top:10px;font-size:17px}
+  .prose li::before{content:"";position:absolute;left:0;top:6px;width:18px;height:18px;border-radius:50%;background:var(--icon-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12h12' fill='none' stroke='%231f6f5f' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E") center/12px no-repeat}
+  .prose em{color:var(--navy)}
+  .benefit{margin-top:14px;font-size:15.5px;color:var(--navy);background:var(--mint);border-left:3px solid var(--teal);padding:10px 14px;border-radius:0 8px 8px 0}
+  .benefit strong{color:var(--teal)}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--navy);font-weight:700;font-size:16px;padding:15px 30px;border-radius:7px;transition:background .15s,transform .15s}
+  .btn:hover{background:var(--yellow-hover);transform:translateY(-1px)}
+  .btn svg{width:16px;height:16px}
+  .cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .cta-row .alt{font-size:15px;color:var(--muted)}
+
+  /* NAV */
+  header{background:#111;position:sticky;top:0;z-index:50}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.03em;color:#fff}
+  .brand img{width:40px;height:40px}
+  .brand-text span{color:var(--yellow)}
+  .nav .btn{padding:11px 22px;font-size:14px}
+
+  /* HERO */
+  .hero{background:#fff;padding:72px 0 84px}
+  .hero h1{max-width:860px;margin:0 auto;text-align:center}
+  .hero .prose{margin:28px auto 0;text-align:left}
+  .hero .prose p{font-size:18px;color:var(--muted)}
+  .hero .see{text-align:center;margin-top:24px;font-weight:700;color:var(--navy);font-size:18px}
+  .player{position:relative;max-width:940px;margin:36px auto 0;aspect-ratio:16/9;background:var(--navy-deep);border-radius:14px;overflow:hidden;box-shadow:0 22px 50px rgba(18,43,69,.22);display:flex;align-items:center;justify-content:center}
+  .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .play{width:84px;height:84px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center}
+  .play svg{width:34px;height:34px;color:var(--navy);margin-left:5px}
+  .player .note{position:absolute;bottom:18px;left:0;right:0;color:#dfe8ee;font-size:14px;text-align:center}
+
+  /* SECTIONS */
+  section.band{padding:84px 0}
+  .band.mint{background:var(--mint)}
+  .band.grey{background:var(--grey)}
+  .band h2{margin-bottom:22px}
+  .band h2{text-align:center}
+
+  /* EXAMPLE CALLOUT */
+  .example{margin-top:40px;background:var(--navy);color:#fff;border-radius:14px;padding:36px 38px}
+  .example h3{color:#fff;font-size:22px;margin-bottom:14px}
+  .example p{color:#dfe8ee;margin-top:12px}
+  .example p.big{color:#fff;font-weight:700;font-size:21px;line-height:1.4;margin-top:16px}
+  .example p.big span{color:var(--yellow)}
+
+  /* FEATURES */
+  .features{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+  .feature{background:#fff;border-radius:12px;padding:30px 28px;box-shadow:0 10px 28px rgba(18,43,69,.07)}
+  .feature .num{width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .feature h3{font-size:19px;margin-bottom:10px}
+  .feature p{font-size:15.5px;color:var(--muted);margin-top:10px}
+  .feature p:first-of-type{margin-top:0}
+  .feature ul{margin-top:10px;list-style:none}
+  .feature li{position:relative;padding-left:24px;margin-top:6px;font-size:15px;color:var(--muted)}
+  .feature li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+  .feature .benefit{font-size:14.5px}
+  .feature .eg{font-style:italic;color:var(--navy);background:var(--grey);padding:10px 14px;border-radius:8px;margin-top:10px;font-size:15px}
+
+  /* STEPS */
+  .steps{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:40px}
+  .steps li{background:#fff;border-radius:12px;padding:30px 28px;box-shadow:0 10px 28px rgba(18,43,69,.07)}
+  .steps .num{width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;font-size:17px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .steps h3{font-size:19px;margin-bottom:10px}
+  .steps p{font-size:15.5px;color:var(--muted);margin-top:10px}
+  .steps p:first-of-type{margin-top:0}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+  .know-item{background:var(--grey);border-radius:12px;padding:26px 26px}
+  .know-item h3{font-size:18px;margin-bottom:8px}
+  .know-item p{font-size:15.5px;color:var(--muted)}
+
+  /* CLOSE */
+  .close{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
+  .close .wrap{position:relative;z-index:2;padding-top:84px;padding-bottom:84px;display:grid;grid-template-columns:1fr 200px;gap:48px;align-items:center}
+  .close h2{color:#fff}
+  .close p{margin-top:16px;color:#dfe8ee;font-size:17px;max-width:640px}
+  .close p.small{font-size:15px;color:#b9c7d2;margin-top:14px}
+  .close .cta-row{margin-top:30px}
+  .close-photo img{width:100%;max-width:200px;border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+  .close-photo .cap{margin-top:10px;font-size:13px;color:#b9c7d2;text-align:center}
+
+  footer{background:#fff;padding:26px 0;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--teal);font-weight:600}
+
+  @media (max-width:980px){
+    h1{font-size:34px} h2{font-size:29px}
+    .features,.steps,.know{grid-template-columns:1fr}
+    .close .wrap{grid-template-columns:1fr}
+    .close-photo{order:-1}
+  }
+  @media (max-width:760px){
+    h1 br,h2 br{display:none}
+    .wrap{padding:0 16px}
+    .nav .btn{padding:10px 16px;font-size:13px}
+    .hero{padding:48px 0 64px}
+    section.band{padding:64px 0}
+    .example{padding:28px 24px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/"><img src="logo.png" alt=""><span class="brand-text">Dark Horse AI<span>.</span></span></a>
+    <a class="btn" href="#contact">Organise a Quick Chat</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Make Bookkeeping A Smaller Part<br>Of The Admin Role</h1>
+    <div class="prose narrow">
+      <p>We&rsquo;ve built an AI agent that works with Xero to take much of the repetitive work out of processing supplier invoices and bank transactions.</p>
+      <p>It helps your staff get through the bookkeeping faster, so they can spend more time on the other things you need them to do.</p>
+      <p>This page gives you an overview of what the agent does and how it fits in with a new admin hire.</p>
+      <p class="see">See how it works in the demo below.</p>
+    </div>
+    <div class="player">
+      <!-- Replace this block with the accounts payable demo embed, e.g. <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe> -->
+      <div class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg></div>
+      <div class="note">Demo video</div>
+    </div>
+  </div>
+</section>
+
+<section class="band mint">
+  <div class="wrap">
+    <div class="narrow prose">
+      <h2>Less Time On Bookkeeping.<br>More Time On The Rest Of The Job.</h2>
+      <p>Processing invoices might not be complicated, but it can be surprisingly time-consuming.</p>
+      <p>Opening emails, downloading invoices, checking details, selecting account codes, entering bills into Xero, checking GST and keeping everything organised.</p>
+      <p>And that&rsquo;s before you get to reconciling the bank.</p>
+      <p>Our Xero Agent takes care of much of that repetitive work, while keeping your staff in control of the important decisions.</p>
+      <p>The result is less time spent entering information and more time available for the work that needs a person: answering customers, coordinating jobs, dealing with suppliers, managing schedules and keeping the office running smoothly.</p>
+      <p>It can also widen your options when recruiting.</p>
+      <p>Rather than needing someone with extensive Xero experience, you can put more weight on the skills the rest of the role needs, and let the agent carry most of the routine bookkeeping.</p>
+      <p>You&rsquo;d still want some training and oversight in place, but the hire no longer has to be a bookkeeper first.</p>
+
+      <div class="example">
+        <h3>A Real-World Example</h3>
+        <p>We recently helped an Australian lighting manufacturer automate much of its bookkeeping process.</p>
+        <p class="big">They&rsquo;re now able to draft around <span>50 supplier invoices</span> in Xero in roughly the same time it previously took to process <span>10 to 15</span>.</p>
+        <p>The person doing the bookkeeping is still in charge. They can just get through substantially more work in the same amount of time.</p>
+        <p>Results will vary depending on the volume and complexity of your invoices, but it gives you an idea of what&rsquo;s possible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="features">
+  <div class="wrap">
+    <div class="narrow prose">
+      <h2>What Can The Agent Actually Do?</h2>
+      <p>It&rsquo;s more than a tool that reads invoices and copies information into Xero. It&rsquo;s designed to take on much of the checking, coding and decision-making involved in day-to-day bookkeeping.</p>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="num">1</div>
+        <h3>Collects Invoices From Your Email</h3>
+        <p>The agent connects to your mailbox and collects new supplier invoices.</p>
+        <p>It identifies which emails contain invoices and which are quotes, delivery dockets, reminders or other correspondence.</p>
+        <div class="benefit"><strong>The benefit:</strong> Less time opening emails, downloading attachments and manually sorting through documents.</div>
+      </div>
+
+      <div class="feature">
+        <div class="num">2</div>
+        <h3>Reads And Prepares Invoices For Xero</h3>
+        <p>The agent extracts the supplier, invoice number, dates, amounts, GST and other relevant details.</p>
+        <p>It then checks this information against your Xero records and prepares the invoice with the appropriate account coding.</p>
+        <p>It can also handle more complicated invoices where different items need to be coded to different accounts.</p>
+        <div class="benefit"><strong>The benefit:</strong> Much less manual data entry, even when an invoice isn&rsquo;t straightforward.</div>
+      </div>
+
+      <div class="feature">
+        <div class="num">3</div>
+        <h3>Processes Multiple Invoices In One Go</h3>
+        <p>For familiar suppliers with consistent coding, the agent can prepare a batch of invoices ready to be drafted in one click.</p>
+        <p>Your staff review the batch to confirm everything looks good, then the agent creates them all as draft bills in Xero, with the invoice documents attached.</p>
+        <div class="benefit"><strong>The benefit:</strong> Instead of opening and entering every invoice individually, staff can deal with routine invoices together and spend their attention on the exceptions.</div>
+      </div>
+
+      <div class="feature">
+        <div class="num">4</div>
+        <h3>Recognises Potential Duplicates And Mistakes</h3>
+        <p>The agent checks whether an invoice is already recorded in Xero before creating another bill.</p>
+        <p>It can also identify situations that warrant a closer look, such as:</p>
+        <ul>
+          <li>An invoice that appears to have already been entered or paid</li>
+          <li>An unusually large bill from a regular supplier</li>
+          <li>A supplier invoice with different GST treatments across its line items</li>
+        </ul>
+        <p>Rather than simply entering everything it receives, the agent flags potential problems for review.</p>
+        <div class="benefit"><strong>The benefit:</strong> Fewer avoidable errors, less double-handling and greater confidence in what&rsquo;s being entered.</div>
+      </div>
+
+      <div class="feature">
+        <div class="num">5</div>
+        <h3>Learns How Your Business Does Things</h3>
+        <p>One of the most useful features is that the agent can learn your business&rsquo;s bookkeeping preferences.</p>
+        <p>It starts with your existing Xero history to understand how suppliers and expenses have typically been handled.</p>
+        <p>Your staff can then teach it specific rules, using ordinary language. For example:</p>
+        <div class="eg">&ldquo;Always put invoices from this supplier to Equipment Hire.&rdquo;</div>
+        <div class="eg">&ldquo;Put the drill under Tools, the gloves under Workwear and everything else under Materials.&rdquo;</div>
+        <p>The agent can remember confirmed instructions and use them in future runs.</p>
+        <p>It also notices corrections made in Xero itself. If your staff change an account or tax type after approving a bill, the agent sees it on the next run and asks whether that&rsquo;s a new rule or a one-off.</p>
+        <div class="benefit"><strong>The benefit:</strong> Less time answering the same questions over and over. As it learns your suppliers and preferences, more invoices can be handled in batches.</div>
+      </div>
+
+      <div class="feature">
+        <div class="num">6</div>
+        <h3>Checks Supplier And GST Details</h3>
+        <p>The agent can check supplier ABNs, recognise existing suppliers and identify GST treatments that need attention.</p>
+        <p>It can distinguish between invoices that include GST, those that don&rsquo;t and invoices containing a mixture of both.</p>
+        <p>It also looks for the signs of a fake or altered invoice, and checks the ABN register before a new supplier is created in Xero.</p>
+        <p>If something doesn&rsquo;t look right, it can bring the issue to your staff&rsquo;s attention rather than making an unsupported assumption.</p>
+        <div class="benefit"><strong>The benefit:</strong> Another layer of checking, with fewer simple mistakes making their way into your accounts.</div>
+      </div>
+
+      <div class="feature">
+        <div class="num">7</div>
+        <h3>Keeps Invoices And Emails Organised</h3>
+        <p>Once invoices have been processed, the agent can file the emails into the appropriate folders, attach invoice documents to the corresponding draft bills in Xero, and save invoice copies according to your business&rsquo;s filing conventions.</p>
+        <p>Items that couldn&rsquo;t be completed are identified for follow-up.</p>
+        <div class="benefit"><strong>The benefit:</strong> Less filing and searching for paperwork, and a clearer record of what has been processed.</div>
+      </div>
+
+      <div class="feature">
+        <div class="num">8</div>
+        <h3>Gives You A Clear Summary Of What&rsquo;s Been Done</h3>
+        <p>At the end of a run, the agent provides a summary showing which invoices have been drafted, what was already recorded, what needs attention and what still needs to be done in Xero.</p>
+        <p>It also checks the work completed during the run against the records in Xero and the decisions your staff made.</p>
+        <div class="benefit"><strong>The benefit:</strong> Your staff can see what&rsquo;s been completed, what&rsquo;s outstanding and where they need to focus next.</div>
+      </div>
+    </div>
+
+    <div class="narrow prose" style="margin-top:56px">
+      <h3 style="font-size:24px;margin-bottom:12px;text-align:center">Question: Isn&rsquo;t This What Hubdoc Or Xero&rsquo;s Own Tools Already Do?</h3>
+      <p>Partly. Xero&rsquo;s built-in tools read an invoice and fill in the supplier&rsquo;s default account. That works well when every invoice from a supplier always goes to the same place.</p>
+      <p>This agent goes further.</p>
+      <p>It works out the coding from how your business has actually coded that supplier before, splits an invoice across accounts when it needs to, catches duplicates Xero doesn&rsquo;t, and learns from every correction your staff make.</p>
+      <p>It also turns card payments with no invoice into proper supplier bills. Xero&rsquo;s bank rules record those as Spend Money rather than bills, so they&rsquo;re missing from your Aged Payables and supplier bill reports.</p>
+      <p>If every one of your suppliers always goes to the same account, Hubdoc may already be enough.</p>
+      <p>This agent earns its keep when the coding takes judgement.</p>
+      <p><strong>Xero&rsquo;s tools fill in fields. This agent makes the decision, shows its reasons and learns from your corrections.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="band mint" id="bank">
+  <div class="wrap">
+    <div class="narrow prose">
+      <h2>It Can Also Help With Bank Reconciliation</h2>
+      <p>Supplier invoices are only one part of the bookkeeping workload.</p>
+      <p>The agent can also help your staff work through bank transactions that haven&rsquo;t yet been reconciled in Xero.</p>
+      <p>It uses your existing transaction history and bookkeeping rules to identify likely matches, suggest account codes and help deal with transactions that have nothing obvious to match against.</p>
+      <p>For regular expenses, it can group similar transactions so your staff don&rsquo;t have to make the same decision repeatedly.</p>
+      <p>It also looks for transactions that might already be accounted for, helping avoid recording the same expense twice.</p>
+      <p>A card payment with no invoice behind it is drafted as a proper bill to that supplier, dated the day it left the bank, rather than disappearing into Spend Money. Your supplier totals in Xero reflect everything you&rsquo;ve actually paid them, including the things that went on the card.</p>
+      <p><strong>Your staff still have the final say.</strong></p>
+      <p>They review the suggestions, authorise any records the agent needs to create, and complete the final reconciliation in Xero.</p>
+      <p>The goal isn&rsquo;t to remove your staff from the process. It&rsquo;s to remove much of the repetitive checking and decision-making so the work gets done faster.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="health">
+  <div class="wrap">
+    <div class="narrow prose">
+      <h2>And It Can Help You Uncover Bookkeeping Errors</h2>
+      <p>Beyond processing new invoices and bank transactions, the agent includes a separate &lsquo;Health Check&rsquo; tool.</p>
+      <p>It reviews existing Xero records and highlights things that may warrant a closer look, such as:</p>
+      <ul>
+        <li>Possible duplicate bills or supplier contacts</li>
+        <li>GST amounts that don&rsquo;t appear to add up</li>
+        <li>GST treatments that differ from the usual treatment for an account</li>
+        <li>GST claimed from suppliers who weren&rsquo;t registered for GST at the relevant time</li>
+      </ul>
+      <p>It gives your staff a list of findings to review, including why each item was flagged.</p>
+      <p>It&rsquo;s designed to be run each quarter as part of preparing the BAS.</p>
+      <p>Your staff work through the findings and tidy up anything that needs it before the figures go to your bookkeeper or accountant, rather than having problems come back to you after lodgement.</p>
+      <p>This doesn&rsquo;t replace your bookkeeper or accountant, and it doesn&rsquo;t make corrections or lodge anything on your behalf.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band grey" id="how">
+  <div class="wrap">
+    <div class="narrow prose">
+      <h2>How Does It Work In Your Business?</h2>
+      <p>The agent is configured for the way your business already operates. It&rsquo;s not a generic chatbot that needs to be taught your bookkeeping from scratch every time you use it.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <div class="num">1</div>
+        <h3>We Set It Up Around Your Xero File</h3>
+        <p>We start by reviewing your existing Xero setup, chart of accounts, suppliers and bookkeeping history.</p>
+        <p>This helps establish how your business codes invoices, deals with regular suppliers and handles different types of transactions.</p>
+        <p>We also connect the relevant email account and configure the agent around your existing processes.</p>
+      </li>
+      <li>
+        <div class="num">2</div>
+        <h3>Your Staff Start A Run When They&rsquo;re Ready</h3>
+        <p>The agent operates through a conversational desktop interface.</p>
+        <p>Rather than learning complicated software or writing technical AI prompts, your staff can simply start a bookkeeping run.</p>
+        <p>The agent collects the invoices that have arrived since the previous run, reads them and determines what can be prepared straight away and what needs a decision.</p>
+        <p>You can run it as often as suits your business: weekly, more frequently, or whenever there&rsquo;s a batch of invoices to process.</p>
+      </li>
+      <li>
+        <div class="num">3</div>
+        <h3>The Agent Does The Preparation. Your Staff Make The Decisions.</h3>
+        <p>Routine invoices are grouped together for review.</p>
+        <p>Where the agent needs clarification, it asks straightforward questions with numbered options to make responding quick &amp; easy.</p>
+        <p>Your staff can also type instructions in plain English.</p>
+        <p>Once they&rsquo;ve confirmed the proposed entries, the agent creates the draft bills in Xero.</p>
+      </li>
+      <li>
+        <div class="num">4</div>
+        <h3>Your Staff Review And Approve In Xero</h3>
+        <p>By default the agent prepares draft bills, and your staff review and approve them using your normal Xero processes.</p>
+        <p>As you become more comfortable, it can be set up to approve routine bills too. It never pays suppliers.</p>
+        <p>The agent then provides a summary of what&rsquo;s been completed and what still needs attention.</p>
+        <p>As your staff correct entries and establish preferences, the agent can use those instructions to make future runs more efficient.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="know">
+  <div class="wrap">
+    <div class="narrow prose">
+      <h2>A Few Things Worth Knowing</h2>
+    </div>
+    <div class="know">
+      <div class="know-item">
+        <h3>It doesn&rsquo;t replace your bookkeeper or accountant</h3>
+        <p>The agent is designed to reduce the repetitive work involved in bookkeeping, not take responsibility for financial decisions, BAS preparation or professional accounting advice.</p>
+      </div>
+      <div class="know-item">
+        <h3>You remain in control of what goes into Xero</h3>
+        <p>The agent requires human confirmation before creating records in Xero. Bills start as drafts, and you choose whether it ever approves routine ones. Payments always remain with your business.</p>
+      </div>
+      <div class="know-item">
+        <h3>It works with your existing Xero setup</h3>
+        <p>You don&rsquo;t need to move to a new accounting platform. The agent is configured to work with your existing Xero organisation and supported email system.</p>
+      </div>
+      <div class="know-item">
+        <h3>It does the preparation, not the approving</h3>
+        <p>The agent sits on top of Xero&rsquo;s own Bills and reconcile screens. Your staff still work in Xero the way they always have. The agent does the reading, checking and coding before they get there.</p>
+      </div>
+      <div class="know-item">
+        <h3>Every run leaves a record</h3>
+        <p>Each run produces a plain-English summary of what was drafted, what was skipped and why, and what still needs a decision. Nothing happens quietly in the background.</p>
+      </div>
+      <div class="know-item">
+        <h3>It&rsquo;s AI-assisted, not completely hands-off</h3>
+        <p>Unusual invoices, ambiguous transactions and anything the agent isn&rsquo;t confident about still require human input. That&rsquo;s intentional.</p>
+      </div>
+      <div class="know-item">
+        <h3>It can usually be ready before your new hire starts</h3>
+        <p>Once we have access to your Xero file and the inbox your invoices arrive in, the first working version can typically be ready in about a week. That should leave plenty of time between now and your new hire&rsquo;s start date.</p>
+      </div>
+      <div class="know-item">
+        <h3>How your information is handled</h3>
+        <p>The agent processes business financial information using connected services, including AI processing. Before setup, we&rsquo;ll discuss the access required, where information is processed and how it will be handled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="close" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Could This Work For Your Business?</h2>
+      <p>If you&rsquo;re using Xero and regularly processing supplier invoices, there&rsquo;s a good chance some of that work could be done significantly quicker.</p>
+      <p>The biggest opportunities tend to be businesses with recurring suppliers, a reasonable volume of invoices and staff spending time manually checking, coding and entering transactions.</p>
+      <p>But every business&rsquo;s bookkeeping is a little different, so the first step is simply to see whether the agent would be a good fit for yours.</p>
+      <p>If what you&rsquo;ve seen looks interesting, I&rsquo;m happy to have a quick chat about how you&rsquo;re currently handling bookkeeping, what your new admin person will be responsible for, and whether this could help.</p>
+      <div class="cta-row">
+        <a class="btn js-mail" data-subject="Quick chat about our new admin hire" href="#">Organise a Quick Chat <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <p class="small">There&rsquo;s no lengthy sales presentation, just a conversation about your business and whether there&rsquo;s a worthwhile opportunity.</p>
+    </div>
+    <div class="close-photo">
+      <img src="profile-t.jpg" alt="Craig Crooks">
+      <div class="cap">Craig Crooks, Dark Horse AI</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; <span class="year"></span> Dark Horse AI &middot; Coffs Harbour, NSW</div>
+    <div><a id="contact-email" href="#">craig&#8203;@&#8203;darkhorseai&#8203;.&#8203;com&#8203;.&#8203;au</a></div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var u = 'craig';
+  var d = 'darkhorseai' + '.' + 'com' + '.' + 'au';
+  var addr = u + '@' + d;
+  var el = document.getElementById('contact-email');
+  if (el) { el.href = 'mailto:' + addr; el.textContent = addr; }
+  document.querySelectorAll('.js-mail').forEach(function(a) {
+    var s = a.getAttribute('data-subject');
+    a.href = 'mailto:' + addr + (s ? '?subject=' + encodeURIComponent(s) : '');
+  });
+})();
+</script>
+<script>document.querySelectorAll(".year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
+</body>
+</html>
