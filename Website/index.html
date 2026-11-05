@@ -69,6 +69,7 @@
   nav a:hover,nav a.active{color:#fff}
   nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--yellow)}
   .nav .btn{padding:11px 22px;font-size:14px}
+  nav .nav-cta{display:none}
   .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
   .burger span{display:block;width:22px;height:2px;background:#fff;margin:5px auto}
 
@@ -95,18 +96,32 @@
   .pain-list h3{font-size:17px;margin-bottom:8px;text-wrap:balance;min-height:2.3em;display:flex;align-items:flex-start;justify-content:center}
   .pain-list p{font-size:15.5px;color:var(--muted);max-width:270px;text-wrap:balance}
 
-  /* HELP */
-  .help{background:var(--mint);padding:84px 0}
-  .help-top{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-  .help-top .lead{margin-top:0}
-  .help-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px}
-  .help-item{padding:0 36px;border-left:1px solid #cfe0d7}
-  .help-item:first-child{padding-left:0;border-left:0}
-  .help-item:last-child{padding-right:0}
-  .help-item h3{font-size:20px;margin:18px 0 8px}
-  .help-item p{font-size:15.5px;color:var(--muted)}
-  .guarantee{display:flex;align-items:center;gap:18px;max-width:760px;margin:56px auto 0;background:#fff;border-radius:12px;padding:22px 28px;box-shadow:0 10px 28px rgba(18,43,69,.08)}
-  .guarantee p{font-size:17px;font-weight:600;color:var(--navy)}
+  /* ASSESSMENT */
+  .assess{background:var(--mint);padding:96px 0}
+  .assess-title{text-align:center;font-size:40px}
+  .assess-sub{text-align:center;color:var(--navy);font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:14px auto 0;max-width:720px}
+  .assess-wide{display:grid;grid-template-columns:1.25fr .75fr;margin-top:44px;background:#fff;border-radius:16px;box-shadow:0 22px 50px rgba(18,43,69,.14);overflow:hidden}
+  .assess-steps{padding:40px 44px;display:flex;flex-direction:column;gap:26px}
+  .assess-step{display:flex;gap:18px;align-items:flex-start}
+  .assess-step .icon{width:48px;height:48px}
+  .assess-step .icon svg{width:22px;height:22px}
+  .assess-step h3{font-size:18px;margin-bottom:4px}
+  .assess-step p{font-size:15.5px;color:var(--muted)}
+  .assess-offer{padding:40px 36px;background:var(--navy);display:flex;flex-direction:column;justify-content:center}
+  .assess-price{font-size:42px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1;text-align:center;margin-bottom:18px}
+  .assess-price .gst{font-size:20px;font-weight:700;letter-spacing:0}
+  .assess-price small{display:block;font-size:14px;font-weight:600;color:#dfe8ee;letter-spacing:0;margin-top:8px}
+  .assess-offer .ind-list{margin:0 0 28px}
+  .assess-offer .ind-list li{color:#fff;font-size:15px}
+  .assess-offer .ind-list li::before{background-color:var(--yellow);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 12.5l3.2 3L17 9' fill='none' stroke='%23122b45' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+  .assess-offer .btn{width:100%;justify-content:center}
+  .assess-note{margin-top:16px;text-align:center;font-size:14px;color:#dfe8ee}
+  .assess-guarantee{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;margin:28px auto 0;max-width:860px;background:#fff;border-radius:16px;border-left:8px solid var(--yellow);padding:34px 40px;box-shadow:0 14px 34px rgba(18,43,69,.10)}
+  .assess-guarantee .icon{width:72px;height:72px}
+  .assess-guarantee .icon svg{width:34px;height:34px}
+  .assess-guarantee h3{font-size:24px;margin-bottom:10px}
+  .assess-guarantee p{font-size:17px;color:var(--text);line-height:1.6}
+  .assess-guarantee p+p{margin-top:10px}
 
   /* INDUSTRIES / AREAS */
   .industries{background:var(--navy);padding:84px 0}
@@ -151,6 +166,8 @@
   .local .wrap{position:relative;z-index:2;padding-top:84px;padding-bottom:84px;min-height:460px;display:flex;align-items:center}
   .local-text{max-width:560px}
   .local h2{color:#fff;font-size:38px}
+  .local-lead br{display:none}
+  @media (min-width:981px){.local h2,.local-lead{white-space:nowrap}.local-lead br{display:inline}}
   .local p{margin-top:16px;color:#dfe8ee;font-size:17px;max-width:520px}
   .local-cta{display:flex;align-items:center;gap:22px;margin-top:32px;flex-wrap:wrap}
   .local-cta span{font-size:15px;color:#dfe8ee}
@@ -173,11 +190,14 @@
     .hero-img::before{display:none}
     .pain-list{grid-template-columns:1fr 1fr;row-gap:40px}
     .pain-list::before{display:none}
-    .pain .wrap,.help-top,.ind-top,.people .wrap,.about .wrap{grid-template-columns:1fr;gap:36px}
+    .pain .wrap,.ind-top,.people .wrap,.about .wrap{grid-template-columns:1fr;gap:36px}
     .about-label{position:static}
     .trust{grid-template-columns:1fr;gap:22px}
-    .help-grid{grid-template-columns:1fr;gap:32px}
-    .help-item{padding:0;border-left:0}
+    .assess-wide{grid-template-columns:1fr;margin-top:36px}
+    .assess-title{font-size:30px}
+    .assess-sub{font-size:24px}
+    .assess-steps{padding:32px 28px}
+    .assess-offer{padding:32px 28px}
     .ind-grid{max-width:460px;margin-left:auto;margin-right:auto}
     .ind{flex:0 0 100%}
     .local-img{position:relative;width:100%;height:320px}
@@ -187,11 +207,16 @@
   @media (max-width:760px){
     .pain-list{grid-template-columns:1fr}
     .pain-list h3{min-height:0}
+    .assess-steps,.assess-offer{padding:26px 20px}
+    .assess-guarantee{grid-template-columns:1fr;padding:26px 22px;gap:16px}
+    .assess-price{font-size:36px}
     .wrap{padding:0 16px}
     nav,.nav .btn{display:none}
     .burger{display:block}
     nav.open{display:block;position:absolute;left:0;right:0;top:64px;background:#111;padding:16px 20px}
     nav.open ul{flex-direction:column;gap:14px}
+    nav.open .nav-cta{display:block}
+    nav.open .nav-cta .btn,nav.open .nav-cta .btn:hover{display:inline-flex;color:var(--navy)}
   }
 </style>
 </head>
@@ -200,17 +225,16 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="/"><img src="images/logo.png" alt=""><span class="brand-text">Dark Horse AI<span>.</span></span></a>
-    <nav id="nav">
+    <nav id="nav" onclick="this.classList.remove('open')">
       <ul>
         <li><a class="active" href="/">Home</a></li>
-        <li><a href="#industries">What We Do</a></li>
-        <li><a href="#help">How It Works</a></li>
-        <li><a href="https://darkhorse.marketing/ai-for-marketing-teams/" target="_blank" rel="noopener">AI for Marketing Teams</a></li>
+        <li><a href="#assessment">AI Assessment</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li class="nav-cta"><a class="btn" href="#assessment">Get My Report</a></li>
       </ul>
     </nav>
-    <a class="btn js-mail" data-subject="Quick chat about AI for my business" href="#contact">Let's Have a Chat</a>
+    <a class="btn" href="#assessment">Get My Report</a>
     <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -219,8 +243,8 @@
   <div class="wrap">
     <div class="hero-text">
       <h1>You Run the Business.<br>We'll Sort Out the AI.</h1>
-      <p>Give your team systems that handle the repetitive tasks.<br>They get more time for the work that grows your business.</p>
-      <a class="btn js-mail" data-subject="Quick chat about AI for my business" href="#contact">Let's Have a Chat <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <p>We help business owners get 5 to 10 hours a week back.<br>Simple tools, set up in an afternoon, saving hours from the first week.</p>
+      <a class="btn" href="#assessment">Get My Report <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       <div class="loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Based in Coffs Harbour. Working with businesses across the Mid North Coast, Northern NSW and SE QLD.</span></div>
     </div>
   </div>
@@ -266,45 +290,53 @@
   </div>
 </section>
 
-<section class="industries" id="industries">
+<section class="assess" id="assessment">
   <div class="wrap">
-    <div class="ind-top">
-      <h2>Different Businesses.<br>Similar Opportunities</h2>
-      <p class="lead">Every business is different, but the opportunities usually show up in the same areas.</p>
+    <h2 class="assess-title">AI Opportunity Assessment</h2>
+    <p class="assess-sub">Get 5 Hours a Week Back, Without Hiring Anyone</p>
+    <div class="assess-wide">
+      <div class="assess-steps">
+        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><h3>The Call</h3><p>We talk for 45 minutes about how your business runs day to day. No prep needed.</p></div></div>
+        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div><div><h3>The Report</h3><p>Two days later you get a report with three to seven specific tool recommendations. Each tool is matched to something you told us, with the cost, setup time and the hours it can save you.</p></div></div>
+        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div><div><h3>The Walkthrough</h3><p>Then we go through it together and decide what to do first.</p></div></div>
+      </div>
+      <div class="assess-offer">
+        <ul class="ind-list">
+          <li>Less than 2 hours of your time required</li>
+          <li>Report delivered within 48 hours</li>
+          <li>Hours back before the week is out</li>
+        </ul>
+        <div class="assess-price">$1,500 <span class="gst">+ GST</span><small>One-off. Paid upfront.</small></div>
+        <a class="btn" href="https://cal.com/dark-horse-ai/ai-opportunity-assessment" target="_blank" rel="noopener">Schedule My Call <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <p class="assess-note">Full refund if it doesn&rsquo;t deliver. No questions asked.</p>
+      </div>
     </div>
-    <div class="ind-grid"><div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Sales &amp; Marketing</h3><ul class="ind-list"><li>Turn more leads into sales</li><li>Quotes and proposals out faster</li><li>Get the marketing output of a much bigger team</li></ul></div>
-<div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></div><h3>Customer Service</h3><ul class="ind-list"><li>Enquiries answered in minutes, not days</li><li>No more missed calls</li><li>More happy customers, more good reviews</li></ul></div>
-<div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></svg></div><h3>Admin &amp; Operations</h3><ul class="ind-list"><li>Hours of data entry gone</li><li>Instant answers from your own documents</li><li>Systems that don&rsquo;t rely on one person</li></ul></div>
-<div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><h3>Finance</h3><ul class="ind-list"><li>Bills done in a fraction of the time</li><li>Less time on the books, more on the business</li><li>Get paid sooner</li></ul></div>
-<div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M15 14.2c2.6.2 5 1.8 5 4.8"/></svg></div><h3>HR &amp; People</h3><ul class="ind-list"><li>New staff productive sooner</li><li>Staff paperwork done in minutes</li><li>Policies and training that people actually use</li></ul></div></div>
-    <p class="ind-note">We work with trades, professional services, wholesalers and more.</p>
+    <div class="assess-guarantee">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
+      <div>
+        <h3>Our Money-Back Guarantee</h3>
+        <p>Do the sums before you decide.</p>
+        <p><strong>Five hours a week at $100 an hour is $26,000 a year back into your business.</strong></p>
+        <p>And $100 an hour is a conservative number for the person running the business.</p>
+        <p>The whole assessment is just $1,500.</p>
+        <p>If it doesn&rsquo;t hand you at least one quick win you can set up within seven days that returns five or more hours a week, we&rsquo;ll refund you in full. No questions asked.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="help" id="help">
+<section class="industries" id="industries">
   <div class="wrap">
-    <div class="help-top">
-      <h2>Stop Putting It Off.<br>Start Small, Prove It Works.</h2>
-      <p class="lead">We start with one job that can have a big, measurable impact. See results before you commit to anything else.</p>
+    <div class="ind-top">
+      <h2>Different Businesses. Similar Opportunities</h2>
+      <p class="lead">Every business is different, but the assessment usually finds hours in the same places.</p>
     </div>
-    <div class="help-grid">
-      <div class="help-item">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></div>
-        <h3>Pick It</h3>
-        <p>The job that saves the most hours, brings in the most work, or frees up your best people.</p>
-      </div>
-      <div class="help-item">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4h4l.6 2.4 2.1 1.2 2.3-.7 2 3.4-1.7 1.7v2l1.7 1.7-2 3.4-2.3-.7-2.1 1.2L14 20h-4l-.6-2.4-2.1-1.2-2.3.7-2-3.4L4.7 12v-2L3 8.3l2-3.4 2.3.7 2.1-1.2z"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>Build It</h3>
-        <p>Set up around how your business works, tested with your team, refined until it's right.</p>
-      </div>
-      <div class="help-item">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M7 16v-4M12 16V8M17 16V5"/></svg></div>
-        <h3>Measure It</h3>
-        <p>Hours saved, work won, people freed up. Real numbers, not promises.</p>
-      </div>
-    </div>
-    <div class="guarantee"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><p>We back our work with a 100% money-back guarantee. If it doesn&rsquo;t perform the way it&rsquo;s meant to&hellip;you don&rsquo;t pay.</p></div>
+    <div class="ind-grid"><div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h3>Sales &amp; Marketing</h3><ul class="ind-list"><li>Turn more leads into sales</li><li>Quotes and proposals out faster</li><li>Emails, posts and ads drafted in minutes</li></ul></div>
+<div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg></div><h3>Customer Service</h3><ul class="ind-list"><li>Enquiries answered in minutes, not days</li><li>No more missed calls</li><li>More happy customers, more good reviews</li></ul></div>
+<div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></svg></div><h3>Admin &amp; Operations</h3><ul class="ind-list"><li>Hours of data entry gone</li><li>Instant answers from your own documents</li><li>Meeting notes and follow-ups written for you</li></ul></div>
+<div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><h3>Finance</h3><ul class="ind-list"><li>Bills done in a fraction of the time</li><li>Less time on the books, more on the business</li><li>Get paid sooner</li></ul></div>
+<div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M15 14.2c2.6.2 5 1.8 5 4.8"/></svg></div><h3>HR &amp; People</h3><ul class="ind-list"><li>Rosters and timesheets sorted in minutes</li><li>Staff questions answered without asking you</li><li>Staff paperwork done in minutes</li></ul></div></div>
+    <p class="ind-note">We work with trades, professional services, wholesalers and more.</p>
   </div>
 </section>
 
@@ -330,7 +362,7 @@
     <div class="about-body">
       <p class="about-sub">Practical AI advice from someone who understands small business.</p>
       <p>I&rsquo;ve spent 20+ years in marketing and business management, most of it helping small businesses grow.</p>
-      <p>Now I use that experience to help local businesses make use of AI. I focus on understanding how your business works, identifying opportunities worth pursuing and helping your people put useful solutions into practice.</p>
+      <p>Now I use that experience to help local businesses make use of AI. I focus on understanding how your business works, identifying opportunities worth pursuing and helping you and your people put useful solutions into practice.</p>
       <p>I&rsquo;m based in Coffs Harbour and work with businesses from Port Macquarie to SE QLD. I also take on clients further afield if the fit is good.</p>
       <div class="standout">AI should help people be more productive, not replace them.</div>
       <div class="trust">
@@ -352,11 +384,10 @@
 <section class="local" id="contact">
   <div class="wrap">
     <div class="local-text">
-      <h2>Let's Explore What AI Could Do for Your Business</h2>
-      <p>The best way to get started is with a quick chat. We're happy to come to you if you're local, otherwise we'll jump on a video chat or phone call.</p>
+      <h2>Ready To Get Back Some Of Your Week?</h2>
+      <p class="local-lead">Book the assessment and we&rsquo;ll set up your 45-minute call. If you&rsquo;ve got a question first,<br> email me and I&rsquo;ll come straight back to you.</p>
       <div class="local-cta">
-        <a class="btn js-mail" data-subject="Quick chat about AI for my business" href="#">Let's Have a Chat <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <span>Practical advice. No obligation.</span>
+        <a class="btn" href="#assessment">Schedule My Call <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
       <p class="local-email">Or email <a class="js-email-link" href="#">craig&#8203;@&#8203;darkhorseai&#8203;.&#8203;com&#8203;.&#8203;au</a></p>
     </div>
