@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.ico?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#122b45;
@@ -85,7 +85,7 @@
   /* PAIN */
   .pain{background:#fff;padding:84px 0}
   .pain-top{text-align:center;max-width:760px;margin:0 auto}
-  .pain h2{font-size:40px}
+  .pain h2{font-size:40px;font-style:italic}
   .pain h2 .q-open{margin-left:-.4em;margin-right:.02em}
   .pain h2 .q-close{margin-left:-.12em}
   .pain .lead{margin:16px auto 0}
@@ -96,32 +96,65 @@
   .pain-list h3{font-size:17px;margin-bottom:8px;text-wrap:balance;min-height:2.3em;display:flex;align-items:flex-start;justify-content:center}
   .pain-list p{font-size:15.5px;color:var(--muted);max-width:270px;text-wrap:balance}
 
-  /* ASSESSMENT */
-  .assess{background:var(--mint);padding:96px 0}
-  .assess-title{text-align:center;font-size:40px}
-  .assess-sub{text-align:center;color:var(--navy);font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:14px auto 0;max-width:720px}
-  .assess-wide{display:grid;grid-template-columns:1.25fr .75fr;margin-top:44px;background:#fff;border-radius:16px;box-shadow:0 22px 50px rgba(18,43,69,.14);overflow:hidden}
-  .assess-steps{padding:40px 44px;display:flex;flex-direction:column;gap:26px}
+  /* MINI ASSESSMENT */
+  .hero-text .hero-note{margin:14px 0 0;font-size:15px;color:var(--muted)}
+  button.btn{border:0;cursor:pointer;font-family:inherit}
+  .mini{background:var(--mint);padding:84px 0;scroll-margin-top:32px}
+  .mini .wrap{display:grid;grid-template-columns:.9fr 1.1fr;grid-template-rows:auto 1fr;column-gap:56px;row-gap:32px;align-items:start}
+  .mini-head{grid-column:1/-1;grid-row:1;text-align:center;margin:0 auto 12px}
+  .mini-head h2{text-wrap:balance}
+  .mini-head h2{font-size:40px}
+  .mini-info{grid-column:1;grid-row:2;padding-top:24px}
+  .mini-card{grid-column:2;grid-row:2;background:#fff;border-radius:16px;box-shadow:0 22px 50px rgba(18,43,69,.14);padding:30px 36px;min-height:420px;display:flex;flex-direction:column}
+  .mini-steps{display:flex;flex-direction:column;gap:44px}
+  .mini-steps .assess-step .icon{background:#fff}
+  .mini-progress{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+  .mini-bar{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+  .mini-bar span{display:block;height:100%;width:0;background:var(--teal);transition:width .25s}
+  .mini-count{font-size:14px;font-weight:600;color:var(--muted);white-space:nowrap}
+  #miniForm{flex:1;display:flex;flex-direction:column}
+  #miniForm[hidden],#miniProgress[hidden]{display:none}
+  .mini-step h3{font-size:22px;line-height:1.25}
+  .mini-step>label{display:block}
+  .mini-help{margin-top:10px;font-size:15.5px;color:var(--muted)}
+  .mini-choices{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+  .mini-choice{width:100%;text-align:left;font:600 16px 'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--navy);background:#fff;border:2px solid var(--line);border-radius:10px;padding:16px 18px;cursor:pointer;transition:border-color .15s,background .15s}
+  .mini-choice:hover{border-color:var(--teal)}
+  .mini-choice.is-on{border-color:var(--teal);background:var(--mint)}
+  .mini-card textarea,.mini-card input{width:100%;font:400 16px 'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--text);background:#fff;border:1.5px solid #c9d3d0;border-radius:8px;padding:12px 14px}
+  .mini-card textarea{margin-top:16px;resize:vertical;line-height:1.5}
+  .mini-card textarea:focus,.mini-card input:focus,.mini-choice:focus-visible,.mini-back:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
+  .mini-card ::placeholder{color:#6c7b88}
+  .mini-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+  .mini-field label{display:block;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .mini-wide{grid-column:1/-1}
+  .mini-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .mini-summary{margin-top:14px;background:var(--mint);border-radius:10px;padding:14px 18px}
+  .mini-summary div{display:flex;justify-content:space-between;gap:16px;padding:5px 0;font-size:15px}
+  .mini-summary div[hidden]{display:none}
+  .mini-summary dt{color:var(--muted)}
+  .mini-summary dd{font-weight:700;color:var(--navy);text-align:right}
+  .mini-error{margin-top:16px;font-size:15px;font-weight:600;color:#a32d2d}
+  .mini-error a{text-decoration:underline}
+  .mini-actions{margin-top:auto;padding-top:24px;display:flex;align-items:center;justify-content:space-between}
+  .mini-back{background:none;border:0;font:600 15px 'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--muted);cursor:pointer;padding:10px 4px}
+  .mini-back:hover{color:var(--navy)}
+  .mini-done{margin:auto 0;text-align:center;outline:none;width:100%}
+  .mini.is-booking .mini-info{display:none}
+  .mini.is-booking .mini-card{grid-column:1/-1}
+  .mini-cal{margin-top:20px;min-height:420px;text-align:left}
+  .mini-done .mini-cal-link{margin-top:14px;font-size:14px}
+  .mini-cal-link a{color:var(--teal);font-weight:600;text-decoration:underline}
+  .mini-done h3{font-size:26px}
+  .mini-done p{margin-top:12px;color:var(--muted)}
+  .mini-done .mini-draft{font-size:14px;font-weight:600;color:#a32d2d}
+
+  /* STEP LIST */
   .assess-step{display:flex;gap:18px;align-items:flex-start}
   .assess-step .icon{width:48px;height:48px}
   .assess-step .icon svg{width:22px;height:22px}
   .assess-step h3{font-size:18px;margin-bottom:4px}
   .assess-step p{font-size:15.5px;color:var(--muted)}
-  .assess-offer{padding:40px 36px;background:var(--navy);display:flex;flex-direction:column;justify-content:center}
-  .assess-price{font-size:42px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1;text-align:center;margin-bottom:18px}
-  .assess-price .gst{font-size:20px;font-weight:700;letter-spacing:0}
-  .assess-price small{display:block;font-size:14px;font-weight:600;color:#dfe8ee;letter-spacing:0;margin-top:8px}
-  .assess-offer .ind-list{margin:0 0 28px}
-  .assess-offer .ind-list li{color:#fff;font-size:15px}
-  .assess-offer .ind-list li::before{background-color:var(--yellow);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 12.5l3.2 3L17 9' fill='none' stroke='%23122b45' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
-  .assess-offer .btn{width:100%;justify-content:center}
-  .assess-note{margin-top:16px;text-align:center;font-size:14px;color:#dfe8ee}
-  .assess-guarantee{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;margin:28px auto 0;max-width:860px;background:#fff;border-radius:16px;border-left:8px solid var(--yellow);padding:34px 40px;box-shadow:0 14px 34px rgba(18,43,69,.10)}
-  .assess-guarantee .icon{width:72px;height:72px}
-  .assess-guarantee .icon svg{width:34px;height:34px}
-  .assess-guarantee h3{font-size:24px;margin-bottom:10px}
-  .assess-guarantee p{font-size:17px;color:var(--text);line-height:1.6}
-  .assess-guarantee p+p{margin-top:10px}
 
   /* INDUSTRIES / AREAS */
   .industries{background:var(--navy);padding:84px 0}
@@ -132,7 +165,6 @@
   .ind{flex:0 0 calc((100% - 44px)/3);background:#fff;border-radius:12px;padding:28px 26px;box-shadow:0 14px 34px rgba(0,0,0,.18);display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center;align-content:start}
   .ind h3{font-size:19px;margin:0}
   .ind .ind-list{grid-column:1/-1;margin-top:22px}
-  .ind-note{text-align:center;margin-top:36px;color:#dfe8ee;font-size:16px}
   .ind-list{list-style:none;margin-top:14px}
   .ind-list li{position:relative;padding-left:28px;font-size:15.5px;color:var(--muted);margin-top:10px;line-height:1.45}
   .ind-list li:first-child{margin-top:0}
@@ -193,11 +225,13 @@
     .pain .wrap,.ind-top,.people .wrap,.about .wrap{grid-template-columns:1fr;gap:36px}
     .about-label{position:static}
     .trust{grid-template-columns:1fr;gap:22px}
-    .assess-wide{grid-template-columns:1fr;margin-top:36px}
-    .assess-title{font-size:30px}
-    .assess-sub{font-size:24px}
-    .assess-steps{padding:32px 28px}
-    .assess-offer{padding:32px 28px}
+    .mini .wrap{grid-template-columns:1fr;grid-template-rows:none}
+    .mini-head,.mini-info,.mini-card{grid-column:1;grid-row:auto}
+    .mini-head{margin-bottom:0}
+    .mini-head h2{font-size:30px}
+    .mini-card{min-height:420px}
+    .mini-steps{gap:22px}
+    .mini-info{padding-top:0}
     .ind-grid{max-width:460px;margin-left:auto;margin-right:auto}
     .ind{flex:0 0 100%}
     .local-img{position:relative;width:100%;height:320px}
@@ -207,9 +241,9 @@
   @media (max-width:760px){
     .pain-list{grid-template-columns:1fr}
     .pain-list h3{min-height:0}
-    .assess-steps,.assess-offer{padding:26px 20px}
-    .assess-guarantee{grid-template-columns:1fr;padding:26px 22px;gap:16px}
-    .assess-price{font-size:36px}
+    .mini{padding:56px 0}
+    .mini-card{padding:26px 20px}
+    .mini-fields{grid-template-columns:1fr}
     .wrap{padding:0 16px}
     nav,.nav .btn{display:none}
     .burger{display:block}
@@ -228,13 +262,13 @@
     <nav id="nav" onclick="this.classList.remove('open')">
       <ul>
         <li><a class="active" href="/">Home</a></li>
-        <li><a href="#assessment">AI Assessment</a></li>
+        <li><a href="#mini">Free Assessment</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li class="nav-cta"><a class="btn" href="#assessment">Get My Report</a></li>
+        <li class="nav-cta"><a class="btn" href="#mini">Start My Free Assessment</a></li>
       </ul>
     </nav>
-    <a class="btn" href="#assessment">Get My Report</a>
+    <a class="btn" href="#mini">Start My Free Assessment</a>
     <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -243,8 +277,9 @@
   <div class="wrap">
     <div class="hero-text">
       <h1>You Run the Business.<br>We'll Sort Out the AI.</h1>
-      <p>We help business owners reclaim 5 to 10 hours a week.<br>Simple tools, set up in an afternoon, saving hours from the first week.</p>
-      <a class="btn" href="#assessment">Get My Report <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <p>We help business owners reclaim 5 to 10 hours a week.<br>What would you do with an extra day every week?</p>
+      <a class="btn" href="#mini">Start My Free Assessment <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <p class="hero-note">5 quick questions then a 15-minute chat. No payment.</p>
       <div class="loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Based in Coffs Harbour. Working with businesses across the Mid North Coast, Northern NSW and SE QLD.</span></div>
     </div>
   </div>
@@ -290,36 +325,96 @@
   </div>
 </section>
 
-<section class="assess" id="assessment">
+<section class="mini" id="mini">
   <div class="wrap">
-    <h2 class="assess-title">AI Opportunity Assessment</h2>
-    <p class="assess-sub">Get 5 Hours a Week Back, Without Hiring Anyone</p>
-    <div class="assess-wide">
-      <div class="assess-steps">
-        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><h3>The Call</h3><p>We talk for 45 minutes about how your business runs day to day. No prep needed.</p></div></div>
-        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div><div><h3>The Report</h3><p>Two days later you get a report with three to seven specific tool recommendations. Each tool is matched to something you told us, with the cost, setup time and the hours it can save you.</p></div></div>
-        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div><div><h3>The Walkthrough</h3><p>Then we go through it together and decide what to do first.</p></div></div>
+    <div class="mini-head">
+      <h2>Free 15-Minute AI Opportunity Assessment</h2>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-progress" id="miniProgress">
+        <div class="mini-bar"><span id="miniBar"></span></div>
+        <span class="mini-count" id="miniCount" aria-live="polite"></span>
       </div>
-      <div class="assess-offer">
-        <ul class="ind-list">
-          <li>Less than 2 hours of your time required</li>
-          <li>Report delivered within 48 hours</li>
-          <li>Hours back before the week is out</li>
-        </ul>
-        <div class="assess-price">$1,200 <span class="gst">+ GST</span><small>One-off. Paid upfront.</small></div>
-        <a class="btn" href="https://cal.com/dark-horse-ai/ai-opportunity-assessment" target="_blank" rel="noopener">Schedule My Call <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <p class="assess-note">Full refund if it doesn&rsquo;t deliver. No questions asked.</p>
+
+      <form id="miniForm" novalidate>
+        <div class="mini-step" data-step="lever">
+          <h3 id="miniLeverLabel">If AI could fix one thing in your business in the next 30 days, what would you want it to do?</h3>
+          <div class="mini-choices" role="group" aria-labelledby="miniLeverLabel">
+            <button type="button" class="mini-choice" data-lever="Make more money">Make more money</button>
+            <button type="button" class="mini-choice" data-lever="Get hours back">Give me hours back</button>
+            <button type="button" class="mini-choice" data-lever="Make customers happier">Make my customers happier</button>
+          </div>
+        </div>
+
+        <div class="mini-step" data-step="text" hidden>
+          <label for="miniRepeat"><h3>What task do you or your team repeat most often each week?</h3></label>
+          <p class="mini-help">Tell us who does it, what tools they use and how often it happens.</p>
+          <textarea id="miniRepeat" name="repeated_task" rows="4" placeholder="For example: Every morning our office manager copies new enquiries from the inbox into our job system, then calls each customer to confirm."></textarea>
+        </div>
+
+        <div class="mini-step" data-step="text" hidden>
+          <label for="miniStuck"><h3>Where do things most often slow down, get stuck or fall through the cracks?</h3></label>
+          <p class="mini-help">Point to the spot that breaks, and tell us what happens when it does.</p>
+          <textarea id="miniStuck" name="friction" rows="4" placeholder="For example: Enquiries that come in after 4pm wait until the next day, so we sometimes lose the job to whoever quotes first."></textarea>
+        </div>
+
+        <div class="mini-step" data-step="hours" hidden>
+          <h3>How many hours a week does that take, and who&rsquo;s doing it?</h3>
+          <p class="mini-help">A rough estimate is fine.</p>
+          <div class="mini-fields">
+            <div class="mini-field"><label for="miniHours">Hours a week</label><input id="miniHours" name="hours_per_week" type="number" min="0.5" max="168" step="0.5" inputmode="decimal" placeholder="6"></div>
+            <div class="mini-field"><label for="miniWho">Who does it?</label><input id="miniWho" name="who_does_it" type="text" placeholder="Our office manager"></div>
+            <div class="mini-field mini-wide"><label for="miniRate">What&rsquo;s an hour of their time worth to you, in dollars? (optional)</label><input id="miniRate" name="hourly_value" type="number" min="1" step="1" inputmode="numeric" placeholder="60"></div>
+          </div>
+        </div>
+
+        <div class="mini-step" data-step="text" hidden>
+          <label for="miniWand"><h3>If that one thing ran itself, what would change for you?</h3></label>
+          <p class="mini-help">Tell us the first thing you&rsquo;d notice.</p>
+          <textarea id="miniWand" name="magic_wand" rows="4" placeholder="For example: Every enquiry would get a reply the same day, and our office manager could spend those six hours chasing unpaid invoices."></textarea>
+        </div>
+
+        <div class="mini-step" data-step="contact" hidden>
+          <h3>Here&rsquo;s what you&rsquo;ve told us</h3>
+          <dl class="mini-summary">
+            <div><dt>What you want</dt><dd id="miniSumLever"></dd></div>
+            <div><dt>Time it takes</dt><dd id="miniSumHours"></dd></div>
+            <div id="miniSumValueRow" hidden><dt>What that time is worth</dt><dd id="miniSumValue"></dd></div>
+          </dl>
+          <p class="mini-help">Where should we send your chat details?</p>
+          <div class="mini-fields">
+            <div class="mini-field"><label for="miniName">Your name</label><input id="miniName" name="name" type="text" autocomplete="name"></div>
+            <div class="mini-field"><label for="miniBiz">Business name</label><input id="miniBiz" name="business" type="text" autocomplete="organization"></div>
+            <div class="mini-field"><label for="miniEmail">Email</label><input id="miniEmail" name="email" type="email" autocomplete="email"></div>
+            <div class="mini-field"><label for="miniPhone">Phone (optional)</label><input id="miniPhone" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="mini-trap" aria-hidden="true"><label for="miniFax">Company fax</label><input id="miniFax" name="company_fax" type="text" tabindex="-1" autocomplete="off"></div>
+        </div>
+
+        <p class="mini-error" id="miniError" role="alert" hidden></p>
+        <p class="mini-error" id="miniSendError" role="alert" hidden>That didn&rsquo;t send. Please try again, or email <a class="js-email-link" href="#">craig&#8203;@&#8203;darkhorseai&#8203;.&#8203;com&#8203;.&#8203;au</a></p>
+
+        <div class="mini-actions">
+          <button type="button" class="mini-back" id="miniBack">Back</button>
+          <button type="submit" class="btn" id="miniNext">Next</button>
+        </div>
+      </form>
+
+      <div class="mini-done" id="miniDone" hidden tabindex="-1">
+        <h3>Thanks. Your answers are in.</h3>
+        <p>Now pick a time for your free 15-minute chat.</p>
+        <p class="mini-draft" id="miniDraft" hidden>Draft preview: this form isn&rsquo;t connected yet, so nothing was sent.</p>
+        <div class="mini-cal" id="miniCal"></div>
+        <p class="mini-cal-link">Calendar not showing? <a id="miniCalLink" href="https://cal.com/dark-horse-ai/free-ai-opportunity-assessment" target="_blank" rel="noopener">Book your time here</a></p>
       </div>
     </div>
-    <div class="assess-guarantee">
-      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
-      <div>
-        <h3>Our Money-Back Guarantee</h3>
-        <p>Do the sums before you decide.</p>
-        <p><strong>Five hours a week at $100 an hour is $26,000 a year back into your business.</strong></p>
-        <p>And $100 an hour is a conservative number for the person running the business.</p>
-        <p>The whole assessment is just $1,200.</p>
-        <p>If it doesn&rsquo;t hand you at least one quick win you can set up within seven days that returns five or more hours a week, we&rsquo;ll refund you in full. No questions asked.</p>
+
+    <div class="mini-info">
+      <div class="mini-steps">
+        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div><div><h3>Answer Five Questions</h3><p>Tell us where the work gets stuck. It only takes a few minutes.</p></div></div>
+        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><h3>Have a 15-Minute Chat</h3><p>We ask a few follow-up questions to pin down your biggest bottleneck. No prep needed.</p></div></div>
+        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></div><div><h3>Get One Recommendation</h3><p>Two days later you get a short report with one tool, what it costs and what to do first. Then we go through it together.</p></div></div>
       </div>
     </div>
   </div>
@@ -336,7 +431,6 @@
 <div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6M9 18h3"/></svg></div><h3>Admin &amp; Operations</h3><ul class="ind-list"><li>Hours of data entry gone</li><li>Instant answers from your own documents</li><li>Meeting notes and follow-ups written for you</li></ul></div>
 <div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div><h3>Finance</h3><ul class="ind-list"><li>Bills done in a fraction of the time</li><li>Less time on the books, more on the business</li><li>Get paid sooner</li></ul></div>
 <div class="ind"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M15 14.2c2.6.2 5 1.8 5 4.8"/></svg></div><h3>HR &amp; People</h3><ul class="ind-list"><li>Rosters and timesheets sorted in minutes</li><li>Staff questions answered without asking you</li><li>Staff paperwork done in minutes</li></ul></div></div>
-    <p class="ind-note">We work with trades, professional services, wholesalers and more.</p>
   </div>
 </section>
 
@@ -361,7 +455,7 @@
     </div>
     <div class="about-body">
       <p class="about-sub">Practical AI advice from someone who understands small business.</p>
-      <p>I&rsquo;ve spent 20+ years in marketing and business management, most of it helping small businesses grow.</p>
+      <p>I&rsquo;ve spent 20+ years in marketing and business management.</p>
       <p>Now I use that experience to help local businesses make use of AI. I focus on understanding how your business works, identifying opportunities worth pursuing and helping you and your people put useful solutions into practice.</p>
       <p>I&rsquo;m based in Coffs Harbour and work with businesses from Port Macquarie to SE QLD. I also take on clients further afield if the fit is good.</p>
       <div class="standout">AI should help people be more productive, not replace them.</div>
@@ -385,9 +479,9 @@
   <div class="wrap">
     <div class="local-text">
       <h2>Ready To Get Back Some Of Your Week?</h2>
-      <p class="local-lead">Book the assessment and we&rsquo;ll set up your 45-minute call. If you&rsquo;ve got a question first,<br> email me and I&rsquo;ll come straight back to you.</p>
+      <p class="local-lead">Answer five questions and we&rsquo;ll set up your free 15-minute chat. If you&rsquo;ve got a question first,<br> email me and I&rsquo;ll come straight back to you.</p>
       <div class="local-cta">
-        <a class="btn" href="#assessment">Schedule My Call <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn" href="#mini">Start My Free Assessment <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
       <p class="local-email">Or email <a class="js-email-link" href="#">craig&#8203;@&#8203;darkhorseai&#8203;.&#8203;com&#8203;.&#8203;au</a></p>
     </div>
@@ -397,7 +491,7 @@
 
 <footer>
   <div class="wrap">
-    <div>&copy; <span class="year"></span> Dark Horse AI &middot; Coffs Harbour, NSW</div>
+    <div>&copy; <span class="year"></span> Dark Horse AI &middot; Coffs Harbour, NSW &middot; <a href="/privacy">Privacy</a></div>
     <div><a id="contact-email" href="#">craig&#8203;@&#8203;darkhorseai&#8203;.&#8203;com&#8203;.&#8203;au</a></div>
   </div>
 </footer>
@@ -414,6 +508,153 @@
     var s = a.getAttribute('data-subject');
     a.href = 'mailto:' + addr + (s ? '?subject=' + encodeURIComponent(s) : '');
   });
+})();
+</script>
+<script>
+(function() {
+  // Make scenario 6937328 (Dark Horse AI org, us2): saves answers to the DHAI Free Assessment Submissions Sheet.
+  var WEBHOOK_URL = 'https://hook.us2.make.com/woouy4k5srrjonmkto2wusl4x0omt4u2';
+
+  var form = document.getElementById('miniForm');
+  var steps = [].slice.call(form.querySelectorAll('.mini-step'));
+  var bar = document.getElementById('miniBar');
+  var count = document.getElementById('miniCount');
+  var back = document.getElementById('miniBack');
+  var next = document.getElementById('miniNext');
+  var error = document.getElementById('miniError');
+  var sendError = document.getElementById('miniSendError');
+  var card = form.parentNode;
+  var last = steps.length - 1;
+  var at = 0;
+  var lever = '';
+
+  function val(id) { return document.getElementById(id).value.trim(); }
+  function num(n) { return n.toLocaleString('en-AU', { maximumFractionDigits: 1 }); }
+  function fail(msg, id) {
+    error.textContent = msg;
+    error.hidden = false;
+    if (id) document.getElementById(id).focus();
+    return false;
+  }
+
+  function valid() {
+    var type = steps[at].getAttribute('data-step');
+    if (type === 'lever') return lever ? true : fail('Please pick one.');
+    if (type === 'text') {
+      var box = steps[at].querySelector('textarea');
+      return box.value.trim().length >= 10 ? true : fail('Please add a little more detail.', box.id);
+    }
+    if (type === 'hours') {
+      var h = parseFloat(val('miniHours'));
+      if (!(h > 0 && h <= 168)) return fail('Please enter your best guess at the hours.', 'miniHours');
+      if (!val('miniWho')) return fail('Please tell us who does it.', 'miniWho');
+      var r = val('miniRate');
+      if (r && !(parseFloat(r) > 0)) return fail('Please enter a dollar amount, or leave this blank.', 'miniRate');
+      return true;
+    }
+    if (!val('miniName')) return fail('Please add your name.', 'miniName');
+    if (!val('miniBiz')) return fail('Please add your business name.', 'miniBiz');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('miniEmail'))) return fail('Please check your email address.', 'miniEmail');
+    return true;
+  }
+
+  function summarise() {
+    var h = parseFloat(val('miniHours'));
+    var r = parseFloat(val('miniRate'));
+    var yearly = h * 52;
+    document.getElementById('miniSumLever').textContent = lever;
+    document.getElementById('miniSumHours').textContent = num(h) + ' hours a week, about ' + num(Math.round(yearly)) + ' a year';
+    var row = document.getElementById('miniSumValueRow');
+    row.hidden = !(r > 0);
+    if (r > 0) document.getElementById('miniSumValue').textContent = '$' + num(Math.round(yearly * r)) + ' a year';
+  }
+
+  function show(n, moved) {
+    at = n;
+    steps.forEach(function(s, i) { s.hidden = i !== n; });
+    error.hidden = true;
+    sendError.hidden = true;
+    back.style.visibility = n === 0 ? 'hidden' : 'visible';
+    next.textContent = n === last ? 'Send My Answers' : 'Next';
+    next.parentNode.style.display = n === 0 && !lever ? 'none' : '';
+    next.style.visibility = 'visible';
+    bar.style.width = ((n + 1) / steps.length * 100) + '%';
+    count.textContent = n === last ? 'Last step' : 'Question ' + (n + 1) + ' of ' + last;
+    if (n === last) summarise();
+    if (moved) {
+      var field = steps[n].querySelector('textarea, input:not([tabindex="-1"]), button');
+      if (field) field.focus({ preventScroll: true });
+      var top = card.getBoundingClientRect().top;
+      if (top < 70) window.scrollBy({ top: top - 84, behavior: 'smooth' });
+    }
+  }
+
+  function openCalendar() {
+    var link = 'dark-horse-ai/free-ai-opportunity-assessment';
+    var person = { name: val('miniName'), email: val('miniEmail') };
+    document.getElementById('miniCalLink').href = 'https://cal.com/' + link + '?' + new URLSearchParams(person);
+    (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement('script')).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === 'string') { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ['initNamespace', namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, 'https://app.cal.com/embed/embed.js', 'init');
+    Cal('init', 'mini', { origin: 'https://app.cal.com' });
+    Cal.ns.mini('inline', {
+      elementOrSelector: '#miniCal',
+      calLink: link,
+      config: { layout: 'month_view', name: person.name, email: person.email }
+    });
+    Cal.ns.mini('ui', { hideEventTypeDetails: true, layout: 'month_view' });
+  }
+
+  function finish(draft) {
+    form.hidden = true;
+    document.getElementById('miniProgress').hidden = true;
+    var done = document.getElementById('miniDone');
+    done.hidden = false;
+    document.getElementById('miniDraft').hidden = !draft;
+    document.getElementById('mini').classList.add('is-booking');
+    done.focus({ preventScroll: true });
+    openCalendar();
+    var top = card.getBoundingClientRect().top;
+    if (top < 70) window.scrollBy({ top: top - 84, behavior: 'smooth' });
+  }
+
+  function send() {
+    if (val('miniFax')) return finish(false);
+    if (!WEBHOOK_URL) return finish(true);
+    var data = new URLSearchParams(new FormData(form));
+    data.set('lever', lever);
+    data.set('source', location.href);
+    next.disabled = true;
+    next.textContent = 'Sending...';
+    fetch(WEBHOOK_URL, { method: 'POST', body: data }).then(function(res) {
+      if (!res.ok) throw new Error(res.status);
+      finish(false);
+    }).catch(function() {
+      next.disabled = false;
+      next.textContent = 'Send My Answers';
+      sendError.hidden = false;
+    });
+  }
+
+  form.querySelectorAll('.mini-choice').forEach(function(b) {
+    b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', function() {
+      lever = b.getAttribute('data-lever');
+      form.querySelectorAll('.mini-choice').forEach(function(o) {
+        o.classList.toggle('is-on', o === b);
+        o.setAttribute('aria-pressed', o === b ? 'true' : 'false');
+      });
+      show(1, true);
+    });
+  });
+
+  form.addEventListener('input', function() { error.hidden = true; });
+  back.addEventListener('click', function() { show(at - 1, true); });
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (next.disabled || !valid()) return;
+    if (at === last) send(); else show(at + 1, true);
+  });
+
+  show(0, false);
 })();
 </script>
 <script>document.querySelectorAll(".year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
