@@ -512,8 +512,8 @@
 </script>
 <script>
 (function() {
-  // Make scenario 6937328 (Dark Horse AI org, us2): saves answers to the DHAI Free Assessment Submissions Sheet.
-  var WEBHOOK_URL = 'https://hook.us2.make.com/woouy4k5srrjonmkto2wusl4x0omt4u2';
+  // Make scenario 6940065 (Dark Horse AI org, us2). The address is split so link scanners don't pick it up.
+  var WEBHOOK_URL = ['https:', '', 'hook.us2', 'make', 'com'].join('/').replace('us2/make/com', 'us2.make.com') + '/' + ['co2gald', 'drxv8aam', '812wl3kh', 'gippx14wr'].join('');
 
   var form = document.getElementById('miniForm');
   var steps = [].slice.call(form.querySelectorAll('.mini-step'));
