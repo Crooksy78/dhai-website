@@ -67,9 +67,7 @@
   nav ul{list-style:none;display:flex;gap:36px}
   nav a{font-size:14px;font-weight:500;color:rgba(255,255,255,.82);padding:8px 0;position:relative;transition:color .2s}
   nav a:hover,nav a.active{color:#fff}
-  nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--yellow)}
   .nav .btn{padding:11px 22px;font-size:14px}
-  nav .nav-cta{display:none}
   .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
   .burger span{display:block;width:22px;height:2px;background:#fff;margin:5px auto}
 
@@ -189,8 +187,9 @@
   .trust{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
   .trust .icon{width:46px;height:46px;background:#fff}
   .trust .icon svg{width:22px;height:22px}
-  .trust h4{font-size:16px;margin:14px 0 6px}
-  .trust p{font-size:15px;line-height:1.55;margin:0}
+  .trust>div{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}
+  .trust h4{font-size:16px;margin:0}
+  .trust p{grid-column:1/-1;font-size:15px;line-height:1.55;margin:12px 0 0}
 
   /* LET'S TALK */
   .local{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
@@ -238,6 +237,17 @@
     .local .wrap{min-height:0;padding-bottom:40px}
   }
   @media (max-width:760px){
+    .pain-list{display:block;margin-top:34px}
+    .pain-list .icon{display:none}
+    .pain-list li{display:block;text-align:left;width:fit-content;max-width:82%;padding:13px 17px;margin-top:10px;background:var(--mint);border-radius:18px 18px 18px 5px}
+    .pain-list li:first-child{margin-top:0}
+    .pain-list li:nth-child(even){margin-left:auto;background:var(--icon-bg);border-radius:18px 18px 5px 18px}
+    .pain-list li:nth-child(4){background:var(--navy)}
+    .pain-list li:nth-child(4) h3{color:#fff}
+    .pain-list h3{display:block;font-size:16.5px;line-height:1.3;margin:0}
+    .hero-text h1{text-align:center}
+    .hero-text>.btn{display:flex;width:fit-content;margin-left:auto;margin-right:auto}
+    .local-cta{justify-content:center}
     .pain-list{grid-template-columns:1fr}
     .pain-list h3{min-height:0}
     .mini{padding:56px 0}
@@ -248,8 +258,6 @@
     .burger{display:block}
     nav.open{display:block;position:absolute;left:0;right:0;top:64px;background:#111;padding:16px 20px}
     nav.open ul{flex-direction:column;gap:14px}
-    nav.open .nav-cta{display:block}
-    nav.open .nav-cta .btn,nav.open .nav-cta .btn:hover{display:inline-flex;color:var(--navy)}
   }
 </style>
 </head>
@@ -264,7 +272,6 @@
         <li><a href="#mini">Free Assessment</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li class="nav-cta"><a class="btn" href="#mini">Start My Free Assessment</a></li>
       </ul>
     </nav>
     <a class="btn" href="#mini">Start My Free Assessment</a>
@@ -276,7 +283,7 @@
   <div class="wrap">
     <div class="hero-text">
       <h1>You Run the Business.<br>We'll Sort Out the AI.</h1>
-      <p>We help business owners reclaim 5 to 10 hours a week.<br>What would you do with an extra day every week?</p>
+      <p>We help business owners reclaim 5 to 10 hours a week. <br>What would you do with an extra day every week?</p>
       <a class="btn" href="#mini">Start My Free Assessment <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       <p class="hero-note">5 quick questions then a 15-minute chat. No payment.</p>
       <div class="loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Based in Coffs Harbour. Working with businesses across the Mid North Coast, Northern NSW and SE QLD.</span></div>
