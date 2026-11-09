@@ -87,6 +87,7 @@
   .pain h2 .q-open{margin-left:-.4em;margin-right:.02em}
   .pain h2 .q-close{margin-left:-.12em}
   .pain .lead{margin:16px auto 0}
+  .pain-list .pm{display:none}
   .pain-list{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:56px;position:relative}
   .pain-list::before{content:"";position:absolute;top:28px;left:12.5%;right:12.5%;height:2px;background:var(--icon-bg)}
   .pain-list li{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center}
@@ -237,6 +238,8 @@
     .local .wrap{min-height:0;padding-bottom:40px}
   }
   @media (max-width:760px){
+    .pain-list .pd{display:none}
+    .pain-list .pm{display:inline}
     .pain-list{display:block;margin-top:34px}
     .pain-list .icon{display:none}
     .pain-list li{display:block;text-align:left;width:fit-content;max-width:82%;padding:13px 17px;margin-top:10px;background:var(--mint);border-radius:18px 18px 18px 5px}
@@ -302,25 +305,25 @@
       <li>
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></div>
         <div>
-          <h3>You've Got Ideas for Where AI Could Help</h3>
+          <h3><span class="pd">You've Got Ideas for Where AI Could Help</span><span class="pm">You've got ideas for where AI could help&hellip;</span></h3>
         </div>
       </li>
       <li>
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
         <div>
-          <h3>But There's No Time to Work It Out</h3>
+          <h3><span class="pd">But There's No Time to Work It Out</span><span class="pm">But there's no time to work it out&hellip;</span></h3>
         </div>
       </li>
       <li>
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M15 14.2c2.6.2 5 1.8 5 4.8"/></svg></div>
         <div>
-          <h3>And No One in the Business to Lead It</h3>
+          <h3><span class="pd">And No One in the Business to Lead It</span><span class="pm">And no one in the business to lead it&hellip;</span></h3>
         </div>
       </li>
       <li>
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M10 15h4"/></svg></div>
         <div>
-          <h3>So It Keeps Getting Pushed Back</h3>
+          <h3><span class="pd">So It Keeps Getting Pushed Back</span><span class="pm">So it keeps getting pushed back!</span></h3>
         </div>
       </li>
     </ul>
