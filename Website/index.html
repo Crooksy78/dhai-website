@@ -75,6 +75,7 @@
   .hero{position:relative;overflow:hidden;background:#fff}
   .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;min-height:580px;position:relative;z-index:2}
   .hero-text{padding:84px 0 74px;align-self:center;max-width:600px}
+  .hero-text h1 .nowrap{white-space:nowrap}
   .hero-text p{margin:22px 0 32px;color:var(--muted);font-size:21px;max-width:600px}
   .hero-img{position:absolute;top:0;bottom:0;left:34%;right:0}
   .hero-img img{width:100%;height:100%;object-fit:cover;object-position:62% 55%}
@@ -126,12 +127,13 @@
   .mini-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
   .mini-field label{display:block;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px}
   .mini-wide{grid-column:1/-1}
+  .mini-label{margin-top:18px;font-size:14px;font-weight:600;color:var(--navy)}
+  .mini-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .mini-chip{font:600 14.5px 'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--navy);background:#fff;border:2px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;transition:border-color .15s,background .15s}
+  .mini-chip:hover{border-color:var(--teal)}
+  .mini-chip.is-on{border-color:var(--teal);background:var(--mint)}
+  .mini-chip:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
   .mini-trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-  .mini-summary{margin-top:14px;background:var(--mint);border-radius:10px;padding:14px 18px}
-  .mini-summary div{display:flex;justify-content:space-between;gap:16px;padding:5px 0;font-size:15px}
-  .mini-summary div[hidden]{display:none}
-  .mini-summary dt{color:var(--muted)}
-  .mini-summary dd{font-weight:700;color:var(--navy);text-align:right}
   .mini-error{margin-top:16px;font-size:15px;font-weight:600;color:#a32d2d}
   .mini-error a{text-decoration:underline}
   .mini-actions{margin-top:auto;padding-top:24px;display:flex;align-items:center;justify-content:space-between}
@@ -217,6 +219,7 @@
     .hero .wrap{grid-template-columns:1fr;min-height:0}
     .hero-text{padding:48px 0 40px;max-width:none}
     .hero-text h1 br,.hero-text p br{display:none}
+    .hero-text h1 .nowrap{white-space:normal}
     .hero-img{position:relative;left:0;height:340px}
     .hero-img::before{display:none}
     .pain-list{grid-template-columns:1fr 1fr;row-gap:40px}
@@ -285,10 +288,10 @@
 <section class="hero">
   <div class="wrap">
     <div class="hero-text">
-      <h1>You Run the Business.<br>We'll Take Care Of The AI.</h1>
+      <h1>You Run the Business.<br><span class="nowrap">We'll Take Care Of The AI.</span></h1>
       <p>We help business owners reclaim 5 to 10 hours a week. <br>What would you do with an extra day every week?</p>
       <a class="btn" href="#mini">Start My Free Assessment <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <p class="hero-note">5 quick questions then a 15-minute chat. No payment.</p>
+      <p class="hero-note">One quick question then a 15-minute chat. No payment.</p>
       <div class="loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg><span>Based in Coffs Harbour. Working with businesses across the Mid North Coast, Northern NSW and SE QLD.</span></div>
     </div>
   </div>
@@ -343,51 +346,25 @@
       </div>
 
       <form id="miniForm" novalidate>
-        <div class="mini-step" data-step="lever">
+        <div class="mini-step" data-step="choice" data-name="lever">
           <h3 id="miniLeverLabel">If AI could fix one thing in your business in the next 30 days, what would you want it to do?</h3>
           <div class="mini-choices" role="group" aria-labelledby="miniLeverLabel">
-            <button type="button" class="mini-choice" data-lever="Make more money">Make more money</button>
-            <button type="button" class="mini-choice" data-lever="Get hours back">Give me hours back</button>
-            <button type="button" class="mini-choice" data-lever="Make customers happier">Make my customers happier</button>
+            <button type="button" class="mini-choice" data-value="Make more money">Make more money</button>
+            <button type="button" class="mini-choice" data-value="Get hours back">Give me hours back</button>
+            <button type="button" class="mini-choice" data-value="Make customers happier">Make my customers happier</button>
           </div>
-        </div>
-
-        <div class="mini-step" data-step="text" hidden>
-          <label for="miniRepeat"><h3>What task do you or your team repeat most often each week?</h3></label>
-          <p class="mini-help">Tell us who does it, what tools they use and how often it happens.</p>
-          <textarea id="miniRepeat" name="repeated_task" rows="4" placeholder="For example: Every morning our office manager copies new enquiries from the inbox into our job system, then calls each customer to confirm."></textarea>
-        </div>
-
-        <div class="mini-step" data-step="text" hidden>
-          <label for="miniStuck"><h3>Where do things most often slow down, get stuck or fall through the cracks?</h3></label>
-          <p class="mini-help">Point to the spot that breaks, and tell us what happens when it does.</p>
-          <textarea id="miniStuck" name="friction" rows="4" placeholder="For example: Enquiries that come in after 4pm wait until the next day, so we sometimes lose the job to whoever quotes first."></textarea>
-        </div>
-
-        <div class="mini-step" data-step="hours" hidden>
-          <h3>How many hours a week does that take, and who&rsquo;s doing it?</h3>
-          <p class="mini-help">A rough estimate is fine.</p>
-          <div class="mini-fields">
-            <div class="mini-field"><label for="miniHours">Hours a week</label><input id="miniHours" name="hours_per_week" type="number" min="0.5" max="168" step="0.5" inputmode="decimal" placeholder="6"></div>
-            <div class="mini-field"><label for="miniWho">Who does it?</label><input id="miniWho" name="who_does_it" type="text" placeholder="Our office manager"></div>
-            <div class="mini-field mini-wide"><label for="miniRate">What&rsquo;s an hour of their time worth to you, in dollars? (optional)</label><input id="miniRate" name="hourly_value" type="number" min="1" step="1" inputmode="numeric" placeholder="60"></div>
-          </div>
-        </div>
-
-        <div class="mini-step" data-step="text" hidden>
-          <label for="miniWand"><h3>If that one thing ran itself, what would change for you?</h3></label>
-          <p class="mini-help">Tell us the first thing you&rsquo;d notice.</p>
-          <textarea id="miniWand" name="magic_wand" rows="4" placeholder="For example: Every enquiry would get a reply the same day, and our office manager could spend those six hours chasing unpaid invoices."></textarea>
         </div>
 
         <div class="mini-step" data-step="contact" hidden>
-          <h3>Here&rsquo;s what you&rsquo;ve told us</h3>
-          <dl class="mini-summary">
-            <div><dt>What you want</dt><dd id="miniSumLever"></dd></div>
-            <div><dt>Time it takes</dt><dd id="miniSumHours"></dd></div>
-            <div id="miniSumValueRow" hidden><dt>What that time is worth</dt><dd id="miniSumValue"></dd></div>
-          </dl>
-          <p class="mini-help">Where should we send your chat details?</p>
+          <h3>Where should we send your chat details?</h3>
+          <p class="mini-label" id="miniStaffLabel">How many people work in the business, including you?</p>
+          <div class="mini-chips" role="group" aria-labelledby="miniStaffLabel">
+            <button type="button" class="mini-chip" data-value="Just me">Just me</button>
+            <button type="button" class="mini-chip" data-value="2-5">2 to 5</button>
+            <button type="button" class="mini-chip" data-value="6-20">6 to 20</button>
+            <button type="button" class="mini-chip" data-value="21-50">21 to 50</button>
+            <button type="button" class="mini-chip" data-value="51+">More than 50</button>
+          </div>
           <div class="mini-fields">
             <div class="mini-field"><label for="miniName">Your name</label><input id="miniName" name="name" type="text" autocomplete="name"></div>
             <div class="mini-field"><label for="miniBiz">Business name</label><input id="miniBiz" name="business" type="text" autocomplete="organization"></div>
@@ -417,7 +394,7 @@
 
     <div class="mini-info">
       <div class="mini-steps">
-        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div><div><h3>Answer Five Questions</h3><p>Tell us where the work gets stuck. It only takes a few minutes.</p></div></div>
+        <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div><div><h3>Tell Us What You Need</h3><p>Pick your goal and leave your details. It takes under a minute.</p></div></div>
         <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><h3>Have a 15-Minute Chat</h3><p>We ask a few follow-up questions to pin down your biggest bottleneck. No prep needed.</p></div></div>
         <div class="assess-step"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg></div><div><h3>Get One Recommendation</h3><p>Two days later you get a short report with the one thing to fix first and how to fix it quickly. Then we go through it together.</p></div></div>
       </div>
@@ -484,7 +461,7 @@
   <div class="wrap">
     <div class="local-text">
       <h2>Ready To Get Back Some Of Your Week?</h2>
-      <p class="local-lead">Answer five questions and we&rsquo;ll set up your free 15-minute chat. If you&rsquo;ve got a question first,<br> email me and I&rsquo;ll come straight back to you.</p>
+      <p class="local-lead">Pick your goal and we&rsquo;ll set up your free 15-minute chat. If you&rsquo;ve got a question first,<br> email me and I&rsquo;ll come straight back to you.</p>
       <div class="local-cta">
         <a class="btn" href="#mini">Start My Free Assessment <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
@@ -521,7 +498,8 @@
   var WEBHOOK_URL = ['https:', '', 'hook.us2', 'make', 'com'].join('/').replace('us2/make/com', 'us2.make.com') + '/' + ['co2gald', 'drxv8aam', '812wl3kh', 'gippx14wr'].join('');
 
   var form = document.getElementById('miniForm');
-  var steps = [].slice.call(form.querySelectorAll('.mini-step'));
+  var allSteps = [].slice.call(form.querySelectorAll('.mini-step'));
+  var steps = allSteps;
   var bar = document.getElementById('miniBar');
   var count = document.getElementById('miniCount');
   var back = document.getElementById('miniBack');
@@ -531,10 +509,10 @@
   var card = form.parentNode;
   var last = steps.length - 1;
   var at = 0;
-  var lever = '';
+  var answers = {};
+
 
   function val(id) { return document.getElementById(id).value.trim(); }
-  function num(n) { return n.toLocaleString('en-AU', { maximumFractionDigits: 1 }); }
   function fail(msg, id) {
     error.textContent = msg;
     error.hidden = false;
@@ -543,51 +521,30 @@
   }
 
   function valid() {
-    var type = steps[at].getAttribute('data-step');
-    if (type === 'lever') return lever ? true : fail('Please pick one.');
-    if (type === 'text') {
-      var box = steps[at].querySelector('textarea');
-      return box.value.trim().length >= 10 ? true : fail('Please add a little more detail.', box.id);
-    }
-    if (type === 'hours') {
-      var h = parseFloat(val('miniHours'));
-      if (!(h > 0 && h <= 168)) return fail('Please enter your best guess at the hours.', 'miniHours');
-      if (!val('miniWho')) return fail('Please tell us who does it.', 'miniWho');
-      var r = val('miniRate');
-      if (r && !(parseFloat(r) > 0)) return fail('Please enter a dollar amount, or leave this blank.', 'miniRate');
-      return true;
-    }
+    var step = steps[at];
+    if (step.getAttribute('data-step') === 'choice') return answers[step.getAttribute('data-name')] ? true : fail('Please pick one.');
+    if (!answers.staff_count) return fail('Please pick how many people work in the business.');
     if (!val('miniName')) return fail('Please add your name.', 'miniName');
     if (!val('miniBiz')) return fail('Please add your business name.', 'miniBiz');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('miniEmail'))) return fail('Please check your email address.', 'miniEmail');
     return true;
   }
 
-  function summarise() {
-    var h = parseFloat(val('miniHours'));
-    var r = parseFloat(val('miniRate'));
-    var yearly = h * 52;
-    document.getElementById('miniSumLever').textContent = lever;
-    document.getElementById('miniSumHours').textContent = num(h) + ' hours a week, about ' + num(Math.round(yearly)) + ' a year';
-    var row = document.getElementById('miniSumValueRow');
-    row.hidden = !(r > 0);
-    if (r > 0) document.getElementById('miniSumValue').textContent = '$' + num(Math.round(yearly * r)) + ' a year';
-  }
-
   function show(n, moved) {
     at = n;
-    steps.forEach(function(s, i) { s.hidden = i !== n; });
+    var step = steps[n];
+    var isChoice = step.getAttribute('data-step') === 'choice';
+    allSteps.forEach(function(s) { s.hidden = s !== step; });
     error.hidden = true;
     sendError.hidden = true;
     back.style.visibility = n === 0 ? 'hidden' : 'visible';
     next.textContent = n === last ? 'Send My Answers' : 'Next';
-    next.parentNode.style.display = n === 0 && !lever ? 'none' : '';
-    next.style.visibility = 'visible';
+    next.parentNode.style.display = n === 0 && !answers.lever ? 'none' : '';
+    next.style.visibility = isChoice && !answers[step.getAttribute('data-name')] ? 'hidden' : 'visible';
     bar.style.width = ((n + 1) / steps.length * 100) + '%';
-    count.textContent = n === last ? 'Last step' : 'Question ' + (n + 1) + ' of ' + last;
-    if (n === last) summarise();
+    count.textContent = 'Step ' + (n + 1) + ' of ' + steps.length;
     if (moved) {
-      var field = steps[n].querySelector('textarea, input:not([tabindex="-1"]), button');
+      var field = step.querySelector('input:not([tabindex="-1"]), button');
       if (field) field.focus({ preventScroll: true });
       var top = card.getBoundingClientRect().top;
       if (top < 70) window.scrollBy({ top: top - 84, behavior: 'smooth' });
@@ -625,7 +582,11 @@
     if (val('miniFax')) return finish(false);
     if (!WEBHOOK_URL) return finish(true);
     var data = new URLSearchParams(new FormData(form));
-    data.set('lever', lever);
+    steps.forEach(function(s) {
+      var name = s.getAttribute('data-name');
+      if (name) data.set(name, answers[name]);
+    });
+    data.set('staff_count', answers.staff_count);
     data.set('source', location.href);
     next.disabled = true;
     next.textContent = 'Sending...';
@@ -642,12 +603,25 @@
   form.querySelectorAll('.mini-choice').forEach(function(b) {
     b.setAttribute('aria-pressed', 'false');
     b.addEventListener('click', function() {
-      lever = b.getAttribute('data-lever');
-      form.querySelectorAll('.mini-choice').forEach(function(o) {
+      var name = b.closest('.mini-step').getAttribute('data-name');
+      answers[name] = b.getAttribute('data-value');
+      b.parentNode.querySelectorAll('.mini-choice').forEach(function(o) {
         o.classList.toggle('is-on', o === b);
         o.setAttribute('aria-pressed', o === b ? 'true' : 'false');
       });
-      show(1, true);
+      show(at + 1, true);
+    });
+  });
+
+  form.querySelectorAll('.mini-chip').forEach(function(b) {
+    b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', function() {
+      answers.staff_count = b.getAttribute('data-value');
+      error.hidden = true;
+      form.querySelectorAll('.mini-chip').forEach(function(o) {
+        o.classList.toggle('is-on', o === b);
+        o.setAttribute('aria-pressed', o === b ? 'true' : 'false');
+      });
     });
   });
 
