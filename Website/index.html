@@ -286,6 +286,12 @@
     .faq-side h2,.faq .lead,.faq-more{text-align:center}
     .faq-list{order:1;margin-top:32px}
     .faq-more{order:2;margin-top:28px}
+    .faq-item{padding:18px 0}
+    .faq-item h3{cursor:pointer;position:relative;padding-right:34px}
+    .faq-item h3::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:26px;font-weight:500;line-height:1;color:var(--teal)}
+    .faq-item.open h3::after{content:"\2212"}
+    .faq-item:not(.open) p{display:none}
+    .faq-item h3:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
     .local-img{position:relative;width:100%;height:320px}
     .local-img::before{background:linear-gradient(180deg,var(--navy-deep) 0%,rgba(13,35,56,0) 50%)}
     .local .wrap{min-height:0;padding-bottom:40px}
@@ -779,6 +785,40 @@
   });
 
   show(0, false);
+})();
+</script>
+<script>
+(function() {
+  // FAQ answers collapse into tap-to-open toggles on mobile. On desktop everything stays open.
+  var mq = window.matchMedia('(max-width:980px)');
+  var items = [].slice.call(document.querySelectorAll('.faq-item'));
+  function toggle(item) {
+    var open = item.classList.toggle('open');
+    item.querySelector('h3').setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function setup() {
+    items.forEach(function(item) {
+      var h = item.querySelector('h3');
+      if (mq.matches) {
+        h.setAttribute('role', 'button');
+        h.setAttribute('tabindex', '0');
+        h.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+      } else {
+        h.removeAttribute('role');
+        h.removeAttribute('tabindex');
+        h.removeAttribute('aria-expanded');
+      }
+    });
+  }
+  items.forEach(function(item) {
+    var h = item.querySelector('h3');
+    h.addEventListener('click', function() { if (mq.matches) toggle(item); });
+    h.addEventListener('keydown', function(e) {
+      if (mq.matches && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggle(item); }
+    });
+  });
+  setup();
+  if (mq.addEventListener) mq.addEventListener('change', setup);
 })();
 </script>
 <script>document.querySelectorAll(".year").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
