@@ -25,8 +25,23 @@
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
   .wrap{max-width:1180px;margin:0 auto;padding:0 36px}
-  header{background:#111}
-  .nav{height:64px;display:flex;align-items:center}
+  header{background:#111;position:sticky;top:0;z-index:50}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+  @media (min-width:981px){#nav{margin-left:48px;margin-right:auto}} /* nav menu left-aligned next to the logo on desktop */
+  nav ul{list-style:none;display:flex;gap:36px}
+  @media (min-width:981px){.nav-free{display:none}} /* desktop has the yellow button instead */
+  nav a{font-size:14px;font-weight:500;color:rgba(255,255,255,.82);padding:8px 0;transition:color .2s}
+  nav a:hover{color:#fff}
+  .btn{display:inline-flex;align-items:center;background:var(--yellow);color:var(--navy);font-weight:700;font-size:14px;padding:11px 22px;border-radius:7px;transition:background .15s}
+  .btn:hover{background:#e8b53b}
+  .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+  .burger span{display:block;width:22px;height:2px;background:#fff;margin:5px auto}
+  @media (max-width:980px){
+    nav,.nav .btn{display:none}
+    .burger{display:block}
+    nav.open{display:block;position:absolute;left:0;right:0;top:64px;background:#111;padding:16px 20px}
+    nav.open ul{flex-direction:column;gap:14px}
+  }
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.03em;color:#fff}
   .brand img{width:40px;height:40px}
   .brand-text span{color:var(--yellow)}
@@ -56,6 +71,19 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="/"><img src="images/logo.png" alt=""><span class="brand-text">Dark Horse AI<span>.</span></span></a>
+    <nav id="nav" onclick="this.classList.remove('open')">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="nav-free"><a href="/#mini">Free Assessment</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/free-stuff">Free Stuff</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="/#mini">Start My Free Assessment</a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
   </div>
 </header>
 

@@ -48,6 +48,7 @@
   nav a{font-size:14px;font-weight:500;color:rgba(255,255,255,.82);padding:8px 0;transition:color .2s}
   nav a:hover,nav a.on{color:#fff}
   nav .nav-cta{display:none}
+  @media (min-width:981px){.nav-free{display:none}} /* desktop has the yellow button instead */
   .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
   .burger span{display:block;width:22px;height:2px;background:#fff;margin:5px auto}
 
@@ -188,7 +189,6 @@
   .card-body{padding:20px 22px 24px}
   .card h2{font-size:20px;margin:0 0 8px}
   .card p{font-size:15px;color:var(--text);margin:0;line-height:1.55}
-  .card p.free{color:var(--navy)}
   @media (max-width:980px){.card{flex-basis:calc((100% - 28px)/2)}}
   @media (max-width:640px){.cards{padding:32px 16px 56px;gap:20px}.card{flex-basis:100%}}
 
@@ -228,10 +228,14 @@
     <a class="brand" href="/"><img src="images/logo.png" alt=""><span class="brand-text">Dark Horse AI<span>.</span></span></a>
     <nav id="nav" onclick="this.classList.remove('open')">
       <ul>
+        <!-- same menu as the home page, on every page except the sales pages (Craig, 16 Nov 2026) -->
         <li><a href="/">Home</a></li>
+        <li class="nav-free"><a href="/#mini">Free Assessment</a></li>
         <li><a href="/services">Services</a></li>
+        <li><a href="/free-stuff">Free Stuff</a></li>
         <li><a class="on" href="/blog">Blog</a></li>
-        <li class="nav-cta"><a class="btn" href="/#mini">Start My Free Assessment</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
     <a class="btn" href="/#mini">Start My Free Assessment</a>
