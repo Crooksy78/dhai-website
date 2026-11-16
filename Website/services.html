@@ -57,6 +57,7 @@ nav ul{list-style:none;display:flex;gap:32px}
 nav a{font-size:14px;font-weight:500;color:rgba(255,255,255,.82);padding:8px 0;transition:color .2s}
 nav a:hover,nav a.on{color:#fff}
 nav .nav-cta{display:none}
+@media (min-width:981px){.nav-free{display:none}} /* desktop has the yellow button instead */
 .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
 .burger span{display:block;width:22px;height:2px;background:#fff;margin:5px auto}
 section[id]{scroll-margin-top:64px}
@@ -251,12 +252,12 @@ footer a{color:var(--teal);font-weight:600}
     <nav id="nav" onclick="this.classList.remove('open')">
       <ul>
         <li><a href="/">Home</a></li>
+        <li class="nav-free"><a href="/#mini">Free Assessment</a></li>
         <li><a class="on" href="/services">Services</a></li>
-        <li><a href="#assessment">Assessment</a></li>
-        <li><a href="#options">Working Together</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="/free-stuff">Free Stuff</a></li>
+        <li><a href="/blog">Blog</a></li>
         <li><a href="#about">About</a></li>
-        <li class="nav-cta"><a class="btn" href="#assessment">Start With the Assessment</a></li>
+        <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
     <a class="btn" href="#assessment">Start With the Assessment</a>

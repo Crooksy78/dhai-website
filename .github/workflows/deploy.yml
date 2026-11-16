@@ -16,9 +16,25 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Put blog posts at the top level
+        run: |
+          mkdir _site
+          cp -r Website/. _site/
+          rm -rf _site/posts
+          if [ -d Website/posts ]; then
+            for f in Website/posts/*.html; do
+              [ -e "$f" ] || continue
+              n=$(basename "$f")
+              if [ -e "_site/$n" ]; then
+                echo "::error::Blog post $n has the same name as an existing page"
+                exit 1
+              fi
+              cp "$f" "_site/$n"
+            done
+          fi
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: Website
+          path: _site
       - uses: actions/deploy-pages@v4
         id: deployment
