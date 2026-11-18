@@ -7,9 +7,13 @@
 <title>Page Not Found | Dark Horse AI</title>
 <script>
   (function () {
+    // Send old trailing-slash URLs and URLs typed with capitals (e.g. /Promenade) to the clean lowercase URL
     var p = location.pathname;
-    if (p.length > 1 && p.charAt(p.length - 1) === '/') {
-      location.replace(p.replace(/\/+$/, '') + location.search + location.hash);
+    var t = p.length > 1 ? p.replace(/\/+$/, '') : p;
+    t = t.toLowerCase();
+    if (t && t !== p) {
+      document.documentElement.style.visibility = 'hidden';
+      location.replace(t + location.search + location.hash);
     }
   })();
 </script>
