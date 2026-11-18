@@ -328,6 +328,15 @@ footer a{color:var(--teal);font-weight:600}
 .photo-hero p{color:#dfe8ee;font-size:18px;max-width:520px;margin-top:16px}
 .photo-hero .pill{background:rgba(255,255,255,.12);color:var(--yellow);margin-top:20px}
 .photo-hero .btn{margin-top:24px}
+@media (max-width:980px){
+  /* Mobile hero: photo first, fading into navy, then the headline and button */
+  .photo-hero{display:flex;flex-direction:column-reverse}
+  .photo-hero .wrap{min-height:0;padding-top:4px;padding-bottom:44px}
+  .photo-hero .local-img{height:260px}
+  .photo-hero .local-img img{object-position:62% 45%!important}
+  .photo-hero .local-img::before{background:linear-gradient(0deg,var(--navy-deep) 0%,rgba(13,35,56,.35) 30%,rgba(13,35,56,0) 60%)}
+  .photo-hero .btn{margin-top:22px}
+}
 @media (max-width:860px){
   .split .wrap{grid-template-columns:1fr}
   .split h1{font-size:32px}
